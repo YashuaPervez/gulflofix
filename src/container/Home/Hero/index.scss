@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .home-hero {
   height: 620px;
   position: relative;
@@ -14,8 +16,13 @@
     img {
       position: absolute;
       top: 0px;
-      right: 0px;
+      left: 0px;
       height: 100%;
+
+      @media (min-width: $desktop) {
+        left: auto;
+        right: 0px;
+      }
     }
   }
 
@@ -29,6 +36,13 @@
     .home-hero-content,
     .home-hero-spacer {
       flex: 1;
+    }
+
+    .home-hero-spacer {
+      display: none;
+      @media (min-width: $desktop) {
+        display: block;
+      }
     }
 
     .home-hero-heading {

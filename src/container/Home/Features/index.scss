@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .home-feature {
   background-color: #fff;
   background-image: url("./../../../images/home-feature-background.svg");
@@ -7,19 +9,28 @@
 }
 
 .home-features-wrapper {
-  margin-top: -200px;
   margin-bottom: 70px;
+  margin-top: -200px;
 
   .features {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    @media (min-width: $desktop) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 
     .feature-item {
-      padding: 0px 20px;
-      border-right: 2px solid rgb(234, 234, 234);
+      padding: 20px 0px;
+      border-bottom: 2px solid rgb(234, 234, 234);
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      @media (min-width: $desktop) {
+        padding: 0px 20px;
+        border-right: 2px solid rgb(234, 234, 234);
+      }
 
       &:first-child {
         padding-left: 0px;
