@@ -7,6 +7,7 @@ import IconList from "./IconList";
 import Toggle from "./Toggle";
 
 //
+import LogoImage from "../../../images/logo.png";
 import "./index.scss";
 
 const Navbar = () => {
@@ -16,7 +17,7 @@ const Navbar = () => {
     <header className="navbar">
       <Container>
         <div className="navbar-content">
-          <h1>navbar</h1>
+          <img src={LogoImage} />
           <div className={`collapse-able ${active ? "active" : ""}`}>
             <Navigation active={active} />
             <IconList />
