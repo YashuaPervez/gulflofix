@@ -14,7 +14,7 @@ const Calendar = () => {
           <iframe
             src="https://meetings.hubspot.com/aadilg?embed=true&parentHubspotUtk=b8da7e28b4bcc48dc0a89dab09bf1932&parentPageUrl=https://www.gulflogix.ae/"
             className="home-calender-section-iframe"
-            scrolling="no"
+            // scrolling="no"
           ></iframe>
         </div>
       </Container>

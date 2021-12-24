@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .home-business-support {
   background-image: url("../../../images/home-business-support-background.png");
   background-size: contain;
@@ -14,10 +16,14 @@
 
   .home-business-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: 26px;
+    grid-template-columns: 1fr;
     list-style: none;
     column-gap: 18px;
+
+    @media (min-width: $desktop) {
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 26px;
+    }
 
     li {
       font-size: 23px;
@@ -46,6 +52,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90px;
+    height: 60px;
+
+    @media (min-width: $desktop) {
+      height: 90px;
+    }
   }
 }
