@@ -24,7 +24,7 @@ const Hero = () => {
                 <span className="text">digital transformation</span>
               </span>
             </h2>
-            <p className="text-large">
+            <p className="text-large hero-hero-text">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed in
               adipisci ad quaerat. Fugiat, sequi voluptas vero accusamus soluta
               nesciunt blanditiis ex autem mollitia temporibus dicta officiis
