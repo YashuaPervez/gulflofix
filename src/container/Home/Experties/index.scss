@@ -1,5 +1,44 @@
+@import "../../../styles/variables.scss";
+
+.home-experties {
+  background-color: $color-p;
+}
+
+.white {
+  color: #fff;
+}
+
 .home-experties-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 36px;
+
+  .experties-grid-item {
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    .experties-grid-item-image {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .experties-grid-item-heading {
+      color: $color-p;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 26.25px;
+    }
+  }
+}
+
+.home-experties-heading {
+  margin-bottom: 18px;
+}
+.home-experties-text {
+  margin-bottom: 36px;
 }

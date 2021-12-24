@@ -5,26 +5,87 @@ import Container from "../../../components/UI/Container";
 import Paper from "../../../components/UI/Paper";
 
 //
+import AutomotiveImage from "../../../images/home-experties/automotive.png";
 import "./index.scss";
 
 const Experties = () => {
   return (
-    <section className="section">
+    <section className="section home-experties">
       <Container>
-        <h2>Industry Expertise</h2>
-        <h3>
-          We are experienced in providing valuable insights and solutions,
-          across a wide range of industries, including but not limited to:
-        </h3>
+        <h2 className="section-heading home-experties-heading">
+          <span className="white">Industry Expertise</span>
+        </h2>
+        <p className="large-text home-experties-text">
+          <span className="white">
+            We are experienced in providing valuable insights and solutions,
+            across a wide range of industries, including but not limited to:
+          </span>
+        </p>
         <div className="home-experties-grid">
-          <Paper>1</Paper>
-          <Paper>2</Paper>
-          <Paper>3</Paper>
-          <Paper>4</Paper>
-          <Paper>5</Paper>
-          <Paper>6</Paper>
-          <Paper>7</Paper>
-          <Paper>8</Paper>
+          <Paper>
+            <div className="experties-grid-item">
+              <div className="experties-grid-item-image">
+                <img src={AutomotiveImage} />
+              </div>
+              <h3 className="experties-grid-item-heading">Automotive</h3>
+            </div>
+          </Paper>
+          <Paper>
+            <div className="experties-grid-item">
+              <div className="experties-grid-item-image">
+                <img src={AutomotiveImage} />
+              </div>
+              <h3 className="experties-grid-item-heading">Automotive</h3>
+            </div>
+          </Paper>
+          <Paper>
+            <div className="experties-grid-item">
+              <div className="experties-grid-item-image">
+                <img src={AutomotiveImage} />
+              </div>
+              <h3 className="experties-grid-item-heading">Automotive</h3>
+            </div>
+          </Paper>
+          <Paper>
+            <div className="experties-grid-item">
+              <div className="experties-grid-item-image">
+                <img src={AutomotiveImage} />
+              </div>
+              <h3 className="experties-grid-item-heading">Automotive</h3>
+            </div>
+          </Paper>
+          <Paper>
+            <div className="experties-grid-item">
+              <div className="experties-grid-item-image">
+                <img src={AutomotiveImage} />
+              </div>
+              <h3 className="experties-grid-item-heading">Automotive</h3>
+            </div>
+          </Paper>
+          <Paper>
+            <div className="experties-grid-item">
+              <div className="experties-grid-item-image">
+                <img src={AutomotiveImage} />
+              </div>
+              <h3 className="experties-grid-item-heading">Automotive</h3>
+            </div>
+          </Paper>
+          <Paper>
+            <div className="experties-grid-item">
+              <div className="experties-grid-item-image">
+                <img src={AutomotiveImage} />
+              </div>
+              <h3 className="experties-grid-item-heading">Automotive</h3>
+            </div>
+          </Paper>
+          <Paper>
+            <div className="experties-grid-item">
+              <div className="experties-grid-item-image">
+                <img src={AutomotiveImage} />
+              </div>
+              <h3 className="experties-grid-item-heading">Automotive</h3>
+            </div>
+          </Paper>
         </div>
       </Container>
     </section>
