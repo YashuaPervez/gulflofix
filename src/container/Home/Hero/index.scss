@@ -5,14 +5,17 @@
   .bg-image {
     position: absolute;
     top: 0px;
-    left: 0px;
+    right: 0px;
     height: 100%;
     width: 100%;
     overflow: hidden;
     z-index: -1;
 
     img {
-      object-fit: contain;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      height: 100%;
     }
   }
 

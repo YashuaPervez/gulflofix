@@ -1,0 +1,13 @@
+.home-business-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 10px;
+}
+
+.home-business-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  background-color: plum;
+}

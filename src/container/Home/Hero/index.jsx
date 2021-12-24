@@ -17,11 +17,14 @@ const Hero = () => {
       <Container>
         <div className="home-hero-content-wrapper">
           <div className="home-hero-content">
-            <h2>
+            <h2 className="hero-heading home-hero-heading">
               Improving business performance through
-              <span> Digital transformation</span>
+              <br />
+              <span className="highlight">
+                <span className="text">digital transformation</span>
+              </span>
             </h2>
-            <p>
+            <p className="text-large">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed in
               adipisci ad quaerat. Fugiat, sequi voluptas vero accusamus soluta
               nesciunt blanditiis ex autem mollitia temporibus dicta officiis
