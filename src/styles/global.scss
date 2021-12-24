@@ -1,5 +1,6 @@
 @import "./typography.scss";
 @import "./fonts.scss";
+@import "./variables.scss";
 
 * {
   padding: 0px;
@@ -14,8 +15,13 @@ a {
 }
 
 .section {
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media (min-width: $desktop) {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
 }
 
 .underline {

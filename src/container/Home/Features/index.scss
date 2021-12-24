@@ -60,7 +60,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
+
+  @media (min-width: $desktop) {
+    margin-bottom: 30px;
+  }
 
   .cta-heading {
     text-align: center;
