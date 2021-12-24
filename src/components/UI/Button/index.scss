@@ -6,9 +6,10 @@
   border-radius: 30px;
   padding: 0px 25px;
   font-size: 17px;
-  font-weight: 400;
+  font-weight: 500;
   cursor: pointer;
   line-height: 40px;
+  transition: 0.15s;
 
   &:hover {
     color: #fff;
@@ -25,6 +26,13 @@
     border-color: $color-s;
     &:hover {
       background-color: $color-s;
+    }
+  }
+
+  &.button-yellow {
+    border-color: #e9ca00;
+    &:hover {
+      background-color: #e9ca00;
     }
   }
 }

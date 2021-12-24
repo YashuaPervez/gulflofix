@@ -9,14 +9,16 @@ import "./index.scss";
 
 const BusinessSupport = () => {
   return (
-    <section className="section">
+    <section className="section home-business-support">
       <Container>
-        <h2>Businesses we support</h2>
-        <h2>
+        <h2 className="section-heading home-business-support-heading">
+          Businesses we support
+        </h2>
+        <p className="large-text home-business-support-text">
           We are a team of highly qualified and experienced industry experts
           offering cutting edge solutions to various verticals, including but
           not limited to:
-        </h2>
+        </p>
         <ul className="home-business-list">
           <li>this is item</li>
           <li>this is item</li>
@@ -26,7 +28,7 @@ const BusinessSupport = () => {
           <li>this is item</li>
         </ul>
         <div className="home-business-cta">
-          <Button>Get Started Now</Button>
+          <Button color="yellow">Get Started Now</Button>
         </div>
       </Container>
     </section>
