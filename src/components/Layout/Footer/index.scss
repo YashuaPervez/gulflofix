@@ -1,0 +1,91 @@
+@import "../../../styles/variables.scss";
+
+.footer {
+  padding: 50px 0px 80px;
+  background-color: #222f3e;
+
+  .footer-logo {
+    margin-bottom: 60px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    column-gap: 10px;
+    row-gap: 36px;
+
+    @media (min-width: $desktop) {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      max-width: 100%;
+    }
+  }
+
+  .footer-heading {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 18px;
+  }
+
+  .footer-list {
+    list-style: none;
+  }
+
+  .text {
+    color: #fff;
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: 300;
+
+    &.text-link {
+      &:hover {
+        color: #91979c;
+      }
+    }
+  }
+
+  .footer-form {
+    margin-top: 30px;
+
+    .footer-element {
+      display: flex;
+      height: 36px;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .footer-input {
+      height: 100%;
+      width: 100%;
+      border: 1px solid #fff;
+      background-color: transparent;
+      border-radius: 12px;
+      outline: none;
+      padding: 0px 8px;
+      color: #fff;
+    }
+
+    .footer-button {
+      height: 100%;
+      width: 100px;
+      border-radius: 12px;
+      border: 1px solid #fff;
+      background-color: #fff;
+      color: #222f3e;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+}
+
+.footer-bar {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 70px;
+  background-color: #949ba2;
+  color: #fff;
+}
