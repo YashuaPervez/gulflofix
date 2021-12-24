@@ -1,6 +1,11 @@
 .home-calender-section {
-  max-width: 720px;
+  max-width: 850px;
   margin: 0px auto;
   height: 620px;
-  background-color: plum;
+
+  .home-calender-section-iframe {
+    height: 100%;
+    width: 100%;
+    border: none;
+  }
 }
