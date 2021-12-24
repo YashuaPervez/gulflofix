@@ -10,8 +10,16 @@
 
 .home-experties-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 36px;
+
+  @media (min-width: $tablet) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (min-width: $desktop) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 
   .experties-grid-item {
     aspect-ratio: 1/1;
