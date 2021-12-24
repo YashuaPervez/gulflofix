@@ -1,0 +1,36 @@
+@import "../../../../styles/variables.scss";
+
+.header-navigation {
+  flex: 1;
+
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    flex-direction: column;
+
+    @media (min-width: $desktop) {
+      flex-direction: row;
+    }
+
+    li {
+      a {
+        color: #000;
+        padding: 10px;
+        display: block;
+
+        &:hover {
+          color: $color-p;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+        @media (min-width: $desktop) {
+          margin-right: 20px;
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+}

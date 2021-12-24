@@ -1,0 +1,15 @@
+.header-icon-list {
+  display: flex;
+  list-style: none;
+  border-left: 1px solid black;
+  padding-left: 32px;
+  margin-left: 32px;
+  height: 112px;
+  align-items: center;
+
+  li {
+    &:not(:last-child) {
+      margin-right: 28px;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@import "../../../styles/variables.scss";
+
+.navbar {
+  background-color: #fff;
+
+  @media (min-width: $desktop) {
+    box-shadow: 0 4px 10px -10px rgba(0, 0, 0, 0.6);
+  }
+
+  .navbar-content {
+    height: 112px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .collapse-able {
+      display: flex;
+      align-items: flex-start;
+      flex: 1;
+      flex-direction: column;
+      position: absolute;
+      top: 112px;
+      left: 0px;
+      width: 100%;
+      background-color: #fff;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      height: 0px;
+      transition: 0.15s;
+
+      &.active {
+        height: 0px;
+        opacity: 1;
+        visibility: visible;
+        height: 380px;
+      }
+
+      @media (min-width: $desktop) {
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        height: 112px;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}

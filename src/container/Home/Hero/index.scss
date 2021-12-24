@@ -1,0 +1,31 @@
+.home-hero {
+  height: 600px;
+  position: relative;
+
+  .bg-image {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  .home-hero-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    z-index: 10;
+
+    .home-hero-content,
+    .home-hero-spacer {
+      flex: 1;
+    }
+  }
+}
