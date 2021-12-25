@@ -8,6 +8,8 @@ import Parther from "../container/About/Partner";
 import WhyChooseUs from "../container/About/WhyChooseUs";
 import Features from "../container/About/Features";
 import Services from "../container/About/Services";
+import OurSolution from "../container/About/OurSolution";
+import ShopCTA from "../container/About/ShopCTA";
 
 const AboutUs = () => {
   return (
@@ -17,6 +19,8 @@ const AboutUs = () => {
       <WhyChooseUs />
       <Features />
       <Services />
+      <OurSolution />
+      <ShopCTA />
     </Layout>
   );
 };

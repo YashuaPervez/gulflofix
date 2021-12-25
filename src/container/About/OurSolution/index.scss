@@ -1,0 +1,15 @@
+.about-oursolution-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  .about-oursolution-image {
+    img {
+      width: 100%;
+    }
+  }
+
+  .about-oursolution-content {
+    padding-left: 30px;
+  }
+}
