@@ -11,50 +11,6 @@
 .home-features-wrapper {
   margin-bottom: 70px;
   margin-top: -200px;
-
-  .features {
-    display: grid;
-    grid-template-columns: 1fr;
-
-    @media (min-width: $desktop) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-
-    .feature-item {
-      padding: 20px 0px;
-      border-bottom: 2px solid rgb(234, 234, 234);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      @media (min-width: $desktop) {
-        padding: 0px 20px;
-        border-right: 2px solid rgb(234, 234, 234);
-        border-bottom: none;
-      }
-
-      &:first-child {
-        padding-left: 0px;
-      }
-
-      &:last-child {
-        padding-right: 0px;
-        border: none;
-      }
-
-      .feature-item-image {
-        margin-bottom: 27px;
-      }
-
-      .feature-item-heading {
-        margin-bottom: 18px;
-      }
-
-      .feature-item-desc {
-        text-align: center;
-      }
-    }
-  }
 }
 
 .home-features-cta {

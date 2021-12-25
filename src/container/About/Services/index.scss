@@ -1,0 +1,30 @@
+.about-services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .about-services-text {
+    text-align: center;
+  }
+
+  .about-services-discovery {
+    width: 100%;
+  }
+
+  .about-services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px;
+
+    .about-services-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .about-services-item-text {
+        max-width: 300px;
+        text-align: center;
+      }
+    }
+  }
+}

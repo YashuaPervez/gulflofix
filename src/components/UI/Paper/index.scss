@@ -1,6 +1,13 @@
 .paper {
   background-color: #fff;
   padding: 36px;
-  box-shadow: 6px 6px 18px 0px rgb(0 0 0 / 30%);
   border-radius: 20px;
+
+  &.shadow {
+    box-shadow: 6px 6px 18px 0px rgb(0 0 0 / 30%);
+  }
+
+  &.outlined {
+    border: 2px solid #d4d7da;
+  }
 }
