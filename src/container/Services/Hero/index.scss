@@ -2,10 +2,16 @@
 
 .services-hero {
   background-image: url("../../../images/services-hero-bg.png");
-  background-size: contain;
   background-repeat: no-repeat;
-  height: 480px;
-  background-position: calc(100% + 128px) -64px;
+  background-position: top right;
+  background-size: contain;
+  height: 340px;
+
+  @media (min-width: $desktop) {
+    background-position: calc(100% + 128px) -64px;
+    background-size: contain;
+    height: 480px;
+  }
 
   .services-hero-title {
     margin-bottom: 28px;
@@ -18,14 +24,24 @@
   .services-hero-grid {
     height: 440px;
     display: flex;
-    align-items: center;
+    padding-top: 120px;
+    // align-items: center;
   }
 
   .services-hero-content {
-    width: 70%;
+    width: 100%;
+
+    @media (min-width: $desktop) {
+      width: 70%;
+    }
   }
   .services-hero-spacer {
-    width: 30%;
+    display: none;
+
+    @media (min-width: $desktop) {
+      display: block;
+      width: 30%;
+    }
   }
 
   .services-hero-spacer {
