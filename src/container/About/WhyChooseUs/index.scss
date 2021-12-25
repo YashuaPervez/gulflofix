@@ -1,6 +1,20 @@
 .about-why-choose-us {
   padding-right: 36px;
   padding-left: 36px;
+  position: relative;
+
+  .about-why-choose-us-background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: url("../../../images/home-services-background.svg");
+    background-position: bottom right;
+    background-size: 70%;
+    background-repeat: no-repeat;
+  }
 
   .about-why-choose-us-container {
     display: flex;

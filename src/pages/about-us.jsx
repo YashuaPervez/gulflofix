@@ -17,9 +17,12 @@ const AboutUs = () => {
       <Hero />
       <Parther />
       <WhyChooseUs />
-      <Features />
-      <Services />
-      <OurSolution />
+      <div className="about-feature-services-solutions-group">
+        <Features />
+        <Services />
+        <OurSolution />
+      </div>
+
       <ShopCTA />
     </Layout>
   );

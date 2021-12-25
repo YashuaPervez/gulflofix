@@ -7,6 +7,7 @@ import WhoChooseUsImage from "../../../images/about-why-choose-us.png";
 const WhyChooseUs = () => {
   return (
     <div className="about-why-choose-us">
+      <div className="about-why-choose-us-background"></div>
       <div className="about-why-choose-us-container">
         <div className="about-why-choose-us-image">
           <img src={WhoChooseUsImage} />
