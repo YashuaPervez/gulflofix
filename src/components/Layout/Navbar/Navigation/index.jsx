@@ -12,7 +12,7 @@ const Navigation = () => {
     <nav className={`header-navigation `}>
       <ul>
         <li>
-          <Link to="/">About</Link>
+          <Link to="/about-us">About</Link>
         </li>
         <li>
           <Link to="/">Our Services</Link>

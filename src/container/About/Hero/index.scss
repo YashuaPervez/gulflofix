@@ -1,0 +1,32 @@
+@import "../../../styles/variables.scss";
+
+.about-hero {
+  background-image: url("../../../images/about-hero-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 560px;
+  background-position: bottom center;
+
+  .about-hero-title {
+    margin-bottom: 28px;
+  }
+
+  .about-hero-grid {
+    height: 440px;
+    display: flex;
+    align-items: center;
+  }
+
+  .about-hero-content,
+  .about-hero-spacer {
+    flex: 1;
+  }
+
+  .about-hero-spacer {
+    display: none;
+
+    @media (min-width: $desktop) {
+      display: block;
+    }
+  }
+}
