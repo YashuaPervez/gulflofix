@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .about-services {
   display: flex;
   flex-direction: column;
@@ -7,14 +9,22 @@
     text-align: center;
   }
 
+  .about-services-heading {
+    text-align: center;
+  }
+
   .about-services-discovery {
     width: 100%;
   }
 
   .about-services-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     gap: 60px;
+    grid-template-columns: 1fr;
+
+    @media (min-width: $desktop) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
 
     .about-services-item {
       display: flex;

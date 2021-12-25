@@ -1,16 +1,28 @@
+@import "../../../styles/variables.scss";
+
 .about-partner {
   .about-partner-content {
     display: flex;
     align-items: center;
+    flex-direction: column;
+
+    @media (min-width: $desktop) {
+      flex-direction: row;
+    }
 
     .about-partner-image {
       width: 150px;
       height: 150px;
-      margin-right: 68px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 24px;
+
+      @media (min-width: $desktop) {
+        margin-right: 68px;
+        margin-bottom: 0px;
+      }
 
       img {
         min-width: 100%;

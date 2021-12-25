@@ -1,3 +1,7 @@
+@import "../../../styles/variables.scss";
+
 .about-features {
-  margin-top: -50px;
+  @media (min-width: $desktop) {
+    margin-top: -50px;
+  }
 }

@@ -13,7 +13,7 @@ const Services = () => {
     <section className="section">
       <Container>
         <div className="about-services">
-          <h2 className="heading-section color-dark mb-sm">
+          <h2 className="heading-section color-dark mb-sm about-services-heading">
             Our Service & Implementation Approach
           </h2>
           <p className="about-services-text text-sm color-gray-2 mb-md">
