@@ -17,18 +17,18 @@ const Hero = () => {
       <Container>
         <div className="home-hero-content-wrapper">
           <div className="home-hero-content">
-            <h2 className="hero-heading home-hero-heading">
+            <h2 className="heading-thin home-hero-heading">
               Improving business performance through
               <br />
               <span className="highlight">
                 <span className="text">digital transformation</span>
               </span>
             </h2>
-            <p className="large-text hero-hero-text">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed in
-              adipisci ad quaerat. Fugiat, sequi voluptas vero accusamus soluta
-              nesciunt blanditiis ex autem mollitia temporibus dicta officiis
-              ratione distinctio maxime?
+            <p className="text-md home-hero-text">
+              We are a unique company that has exemplary skills in low code
+              collaboration and workflow platforms, making us the ideal choice
+              for business process automation, employee engagement &amp; digital
+              transformation initiatives.
             </p>
             <Button>Get Started</Button>
           </div>

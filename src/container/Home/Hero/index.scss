@@ -49,9 +49,16 @@
       margin-bottom: 20px;
     }
 
-    .hero-hero-text {
+    .home-hero-text {
       display: block;
       margin-bottom: 25px;
+
+      @media (min-width: $tablet) {
+        padding-right: 120px;
+      }
+      @media (min-width: $desktop) {
+        padding-right: 0px;
+      }
     }
   }
 }

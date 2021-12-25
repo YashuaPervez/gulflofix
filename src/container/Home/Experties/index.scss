@@ -1,7 +1,7 @@
 @import "../../../styles/variables.scss";
 
 .home-experties {
-  background-color: $color-p;
+  background-color: $color-blue2;
 }
 
 .white {
@@ -36,10 +36,7 @@
     }
 
     .experties-grid-item-heading {
-      color: $color-p;
-      font-size: 15px;
-      font-weight: 500;
-      line-height: 26.25px;
+      color: $color-blue2;
     }
   }
 }

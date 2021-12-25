@@ -30,6 +30,7 @@
       @media (min-width: $desktop) {
         padding: 0px 20px;
         border-right: 2px solid rgb(234, 234, 234);
+        border-bottom: none;
       }
 
       &:first-child {
@@ -62,7 +63,7 @@
   align-items: center;
 
   @media (min-width: $desktop) {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
   .cta-heading {
