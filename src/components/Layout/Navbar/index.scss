@@ -2,6 +2,7 @@
 
 .navbar {
   background-color: #fff;
+  position: relative;
 
   @media (min-width: $desktop) {
     box-shadow: 0 4px 10px -10px rgba(0, 0, 0, 0.6);
@@ -11,7 +12,6 @@
     height: 112px;
     display: flex;
     align-items: center;
-    position: relative;
 
     .collapse-able {
       display: flex;
@@ -30,10 +30,12 @@
       transition: 0.15s;
 
       &.active {
-        height: 0px;
-        opacity: 1;
-        visibility: visible;
-        height: 380px;
+        @media (max-width: #{$desktop - 1px}) {
+          height: 0px;
+          opacity: 1;
+          visibility: visible;
+          height: 300px;
+        }
       }
 
       @media (min-width: $desktop) {

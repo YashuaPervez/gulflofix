@@ -1,13 +1,16 @@
+@import "../../../../styles/variables.scss";
+
 .header-icon-list {
   display: flex;
   list-style: none;
-  border-left: 1px solid black;
+  border-left: 1px solid rgba($color: $color-light, $alpha: 0.4);
   padding-left: 32px;
   margin-left: 32px;
   height: 112px;
   align-items: center;
 
   li {
+    cursor: pointer;
     &:not(:last-child) {
       margin-right: 28px;
     }

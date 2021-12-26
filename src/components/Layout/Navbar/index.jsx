@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "gatsby";
 
 // Components
 import Container from "../../UI/Container";
@@ -17,7 +18,9 @@ const Navbar = () => {
     <header className="navbar">
       <Container>
         <div className="navbar-content">
-          <img src={LogoImage} />
+          <Link to="/">
+            <img src={LogoImage} />
+          </Link>
           <div className={`collapse-able ${active ? "active" : ""}`}>
             <Navigation active={active} />
             <IconList />
