@@ -70,3 +70,85 @@
     display: none !important;
   }
 }
+
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media (min-width: $desktop) {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+}
+
+.underline {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0px;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+  }
+
+  &.orange {
+    &::before {
+      background-color: $color-orange;
+    }
+  }
+  &.blue {
+    &::before {
+      background-color: $color-blue;
+    }
+  }
+  &.pink {
+    &::before {
+      background-color: $color-pink;
+    }
+  }
+  &.yellow {
+    &::before {
+      background-color: $color-yellow;
+    }
+  }
+
+  &:hover {
+    &.orange {
+      color: $color-orange;
+    }
+    &.blue {
+      color: $color-blue;
+    }
+    &.pink {
+      color: $color-pink;
+    }
+    &.yellow {
+      color: $color-yellow;
+    }
+  }
+}
+
+.highlight {
+  font-weight: 500;
+  position: relative;
+  display: flex;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 14px;
+    width: 320px;
+    background-color: $color-p-light;
+    top: 60%;
+    left: -26px;
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+
+  .text {
+    z-index: 1;
+  }
+}

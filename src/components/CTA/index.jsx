@@ -22,7 +22,7 @@ const CTA = ({
         <h3 className={`mb-sm ${heading2Classes}`}>{heading2Text}</h3>
       )}
       {ctaText && ctaLink && (
-        <Link to={ctaLink} className={`underline ${ctaClasses}`}>
+        <Link to={ctaLink} className={`underline text-lg ${ctaClasses}`}>
           {ctaText}
         </Link>
       )}
