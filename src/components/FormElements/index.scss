@@ -1,0 +1,25 @@
+.form-input,
+.form-textarea {
+  background-color: #f5f8fa;
+  border: 1px solid #cbd6e2;
+  color: #33475b;
+  line-height: 22px;
+  font-weight: normal;
+  font-size: 16px;
+  outline: none;
+  border-radius: 3px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.form-input {
+  min-height: 27px;
+  padding: 0px 15px;
+  height: 40px;
+}
+
+.form-textarea {
+  padding: 15px;
+  height: 140px;
+  resize: vertical;
+}

@@ -1,0 +1,39 @@
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+
+  .contact-form-form {
+    .form-layout {
+      display: flex;
+      flex-direction: column;
+
+      .form-row {
+        margin-bottom: 18px;
+        display: flex;
+
+        .form-row-unit {
+          flex: 1;
+          &:not(:last-child) {
+            margin-right: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+
+      .detail-item-icon {
+        margin-right: 6px;
+        margin-top: 3px;
+      }
+    }
+  }
+}
