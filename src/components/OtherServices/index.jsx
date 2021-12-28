@@ -43,7 +43,9 @@ const OtherServices = ({ ignore = "power" }) => {
                   <div className="other-services-content-others-item">
                     <div className="other-services-content-others-image"></div>
                     <div className="other-services-content-others-content">
-                      <h3 className="heading-small color-orange">Office</h3>
+                      <h3 className="heading-small color-orange">
+                        Office 365 Services
+                      </h3>
                       <a className="underline orange text-sm" href="#">
                         Learn More
                       </a>
