@@ -1,0 +1,32 @@
+.services-office-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  .services-office-features-item {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      border-right: 2px solid rgb(234, 234, 234);
+    }
+
+    &:not(:first-child) {
+      padding-left: 36px;
+    }
+
+    .services-office-features-item-image {
+      height: 65px;
+      width: 65px;
+      margin-right: 20px;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .services-office-features-item-body {
+      max-width: 220px;
+    }
+  }
+}

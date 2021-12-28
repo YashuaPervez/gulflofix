@@ -6,6 +6,9 @@ import Layout from "../../components/Layout";
 import CommonHero from "../../components/CommonHero";
 import CTA from "../../components/CTA";
 import Features from "../../container/Services_Pages/Office/Features";
+import Features2 from "../../container/Services_Pages/Office/Features2";
+import Description from "../../container/Services_Pages/Office/Description";
+import OtherServices from "../../components/OtherServices";
 
 //
 import HeroBG from "../../images/services/office/office-365-banner-bg.png";
@@ -23,6 +26,9 @@ const Office365Services = () => {
         buttonColor="orange"
       />
       <Features />
+      <Features2 />
+      <Description />
+      <OtherServices />
       <section className="section">
         <CTA
           headingText="Have questions?"

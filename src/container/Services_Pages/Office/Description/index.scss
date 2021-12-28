@@ -1,0 +1,42 @@
+@import "../../../../styles/variables.scss";
+
+.services-office-description-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+
+  .services-office-description-image {
+    img {
+      width: 100%;
+    }
+  }
+
+  .services-office-description-content {
+    color: rgb(119, 119, 119);
+    font-size: 18px;
+    line-height: 31.5px;
+    font-weight: 400;
+
+    p {
+      margin-bottom: 18px;
+    }
+    ul {
+      margin-bottom: 18px;
+      list-style: none;
+
+      li {
+        &::before {
+          content: "";
+          height: 5px;
+          width: 5px;
+          background-color: $color-orange;
+          display: block;
+          border-radius: 50%;
+          float: left;
+          margin-right: 10px;
+          margin-top: 14px;
+        }
+      }
+    }
+  }
+}

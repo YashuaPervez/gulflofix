@@ -114,6 +114,11 @@
       background-color: $color-yellow;
     }
   }
+  &.teal {
+    &::before {
+      background-color: $color-teal;
+    }
+  }
 
   &:hover {
     &.orange {
@@ -127,6 +132,9 @@
     }
     &.yellow {
       color: $color-yellow;
+    }
+    &.teal {
+      color: $color-teal;
     }
   }
 }
