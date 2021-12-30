@@ -6,6 +6,9 @@ import Layout from "../../components/Layout";
 import CommonHero from "../../components/CommonHero";
 import OtherServices from "../../components/OtherServices";
 import CTA from "../../components/CTA";
+import Apps from "../../container/Services_Pages/Power/Apps";
+import About from "../../container/Services_Pages/Power/About";
+import Apps2 from "../../container/Services_Pages/Power/Apps2";
 
 //
 import HeroBG from "../../images/services/power/power-plaform-banner-bg.png";
@@ -22,6 +25,9 @@ const PowerPlatform = () => {
         title2="The Microsoft Power Platform is a low-code service that allows you to build business solutions and applications that run on multiple platforms and devices with little to no code. "
         buttonColor="yellow"
       />
+      <Apps />
+      <About />
+      <Apps2 />
       <OtherServices />
       <section className="section">
         <CTA

@@ -1,0 +1,21 @@
+.services-power-apps2-item {
+  display: flex;
+  align-items: center;
+
+  .services-power-apps2-item-image {
+    width: 320px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .services-power-apps2-item-content {
+    flex: 1;
+    padding-left: 72px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 36px;
+  }
+}

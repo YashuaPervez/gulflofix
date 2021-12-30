@@ -1,0 +1,21 @@
+.services-power-about-section {
+  padding: 0px;
+
+  .services-power-about {
+    display: flex;
+    align-items: center;
+
+    .services-power-about-image {
+      width: 44%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .services-power-about-content {
+      flex: 1;
+      padding-left: 90px;
+    }
+  }
+}
