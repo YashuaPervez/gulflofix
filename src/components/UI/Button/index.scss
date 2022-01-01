@@ -42,4 +42,18 @@
       background-color: $color-teal;
     }
   }
+
+  &.button-pink {
+    border-color: $color-pink;
+    &:hover {
+      background-color: $color-pink;
+    }
+  }
+
+  &.button-purple {
+    border-color: $color-purple;
+    &:hover {
+      background-color: $color-purple;
+    }
+  }
 }

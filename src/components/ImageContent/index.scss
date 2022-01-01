@@ -1,0 +1,16 @@
+.common-image-content {
+  display: flex;
+  align-items: center;
+
+  .common-image-content-image {
+    width: 50%;
+
+    img {
+      width: 100%;
+    }
+  }
+  .common-image-content-content {
+    flex: 1;
+    padding-left: 64px;
+  }
+}

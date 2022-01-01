@@ -1,13 +1,17 @@
 .common-hero {
   position: relative;
 
-  .common-hero-title2 {
+  .common-hero-title2,
+  .common-hero-title3 {
     color: rgb(34, 47, 62);
     font-size: 27px;
     line-height: 32px;
     font-weight: 400;
     letter-spacing: 0px;
     max-width: 660px;
+  }
+  .common-hero-title3 {
+    font-weight: 500;
   }
 
   .common-hero-image {

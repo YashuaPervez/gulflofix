@@ -12,7 +12,9 @@ const CommonHero = ({
   title,
   titleClasses,
   title2,
+  title3,
   buttonColor,
+  buttonText = "Get Started Now",
 }) => {
   const imageRef = useRef();
 
@@ -32,7 +34,8 @@ const CommonHero = ({
           <h1 className={`heading-xl mb-lg ${titleClasses}`}>{title}</h1>
         )}
         {title2 && <h2 className="common-hero-title2 mb-lg">{title2}</h2>}
-        <Button color={buttonColor}>Get Started Now</Button>
+        {title3 && <h3 className="common-hero-title3 mb-lg">{title3}</h3>}
+        {buttonText && <Button color={buttonColor}>{buttonText}</Button>}
       </div>
     </section>
   );
