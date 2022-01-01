@@ -15,6 +15,9 @@ const Button = ({ children, color }) => {
     case "yellow":
       colorClasses = "button-yellow";
       break;
+    case "teal":
+      colorClasses = "button-teal";
+      break;
     default:
       colorClasses = "button-blue";
       break;

@@ -30,9 +30,16 @@
   }
 
   &.button-yellow {
-    border-color: #e9ca00;
+    border-color: $color-yellow;
     &:hover {
-      background-color: #e9ca00;
+      background-color: $color-yellow;
+    }
+  }
+
+  &.button-teal {
+    border-color: $color-teal;
+    &:hover {
+      background-color: $color-teal;
     }
   }
 }

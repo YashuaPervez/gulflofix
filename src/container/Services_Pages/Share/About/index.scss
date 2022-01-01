@@ -1,0 +1,17 @@
+.services-share-about {
+  display: flex;
+  align-items: center;
+
+  .services-share-about-image {
+    width: 50%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .services-share-about-content {
+    flex: 1;
+    padding-left: 72px;
+  }
+}
