@@ -119,6 +119,11 @@
       background-color: $color-teal;
     }
   }
+  &.purple {
+    &::before {
+      background-color: $color-purple;
+    }
+  }
 
   &:hover {
     &.orange {
@@ -135,6 +140,9 @@
     }
     &.teal {
       color: $color-teal;
+    }
+    &.purple {
+      color: $color-purple;
     }
   }
 }
