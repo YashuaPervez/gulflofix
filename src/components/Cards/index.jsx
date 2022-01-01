@@ -10,14 +10,14 @@ import CodeImage from "../../images/home-services/code.png";
 import DegreeImage from "../../images/home-services/degree.png";
 import StatsImage from "../../images/home-services/stats.png";
 
-const Cards = ({ heading }) => {
+const Cards = ({ heading, paperProps }) => {
   return (
     <>
       {heading && (
         <h2 className="heading-section color-dark mb-lg">{heading}</h2>
       )}
       <div className="card-grid">
-        <Paper>
+        <Paper {...paperProps}>
           <div className="card-item">
             <div className="card-image mb-md">
               <img src={CodeImage} />
@@ -32,7 +32,7 @@ const Cards = ({ heading }) => {
             <Button color="pink">Learn More</Button>
           </div>
         </Paper>
-        <Paper>
+        <Paper {...paperProps}>
           <div className="card-item">
             <div className="card-image mb-md">
               <img src={DegreeImage} />
@@ -48,7 +48,7 @@ const Cards = ({ heading }) => {
             <Button color="blue">Learn More</Button>
           </div>
         </Paper>
-        <Paper>
+        <Paper {...paperProps}>
           <div className="card-item">
             <div className="card-image mb-md">
               <img src={StatsImage} />
