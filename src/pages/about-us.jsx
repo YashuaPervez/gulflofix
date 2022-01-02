@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from "gatsby";
 
 // Components
 import Layout from "../components/Layout";
@@ -11,21 +12,114 @@ import Services from "../container/About/Services";
 import OurSolution from "../container/About/OurSolution";
 import ShopCTA from "../container/About/ShopCTA";
 
-const AboutUs = () => {
+const AboutUs = ({ data }) => {
+  const {
+    title,
+    description,
+    partner,
+    whyChoose,
+    featuresList,
+    implementationTitle,
+    implementationDescription,
+    implementationSubtitle,
+    implementationList,
+    solution,
+    shopCta,
+  } = data.about;
+
   return (
     <Layout>
-      <Hero />
-      <Parther />
-      <WhyChooseUs />
+      <Hero data={{ title, description }} />
+      <Parther data={{ partner }} />
+      <WhyChooseUs data={{ whyChoose }} />
       <div className="about-feature-services-solutions-group">
-        <Features />
-        <Services />
-        <OurSolution />
+        <Features data={{ featuresList }} />
+        <Services
+          data={{
+            implementationTitle,
+            implementationDescription,
+            implementationSubtitle,
+            implementationList,
+          }}
+        />
+        <OurSolution data={{ solution }} />
       </div>
-
-      <ShopCTA />
+      <ShopCTA data={{ shopCta }} />
     </Layout>
   );
 };
+
+export const query = graphql`
+  query AboutPageQuery {
+    about: contentfulAboutPage {
+      title
+      description
+      partner {
+        body {
+          raw
+        }
+        image {
+          file {
+            url
+          }
+          gatsbyImageData(placeholder: TRACED_SVG)
+        }
+      }
+      whyChoose {
+        title
+        body {
+          raw
+        }
+        image {
+          gatsbyImageData(placeholder: BLURRED)
+        }
+      }
+      featuresList {
+        title
+        image {
+          gatsbyImageData(placeholder: TRACED_SVG)
+          file {
+            url
+          }
+        }
+        description {
+          raw
+        }
+      }
+      implementationTitle
+      implementationDescription
+      implementationSubtitle
+      implementationList {
+        image {
+          file {
+            url
+          }
+          gatsbyImageData(placeholder: BLURRED)
+        }
+        title
+        description {
+          raw
+        }
+      }
+      solution {
+        title
+        body {
+          raw
+        }
+        image {
+          gatsbyImageData(placeholder: BLURRED)
+          file {
+            url
+          }
+        }
+      }
+      shopCta {
+        mainTitle
+        buttonText
+        buttonLink
+      }
+    }
+  }
+`;
 
 export default AboutUs;

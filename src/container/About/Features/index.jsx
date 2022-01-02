@@ -7,11 +7,11 @@ import FeaturesBlock from "../../../components/Features";
 //
 import "./index.scss";
 
-const Features = () => {
+const Features = ({ data }) => {
   return (
     <div className="about-features">
       <Container>
-        <FeaturesBlock />
+        <FeaturesBlock features={data?.featuresList} />
       </Container>
     </div>
   );
