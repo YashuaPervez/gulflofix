@@ -9,7 +9,7 @@ import Button from "../../../components/UI/Button";
 import { Email, Phone, Whatsapp } from "../../../components/icons";
 import "./index.scss";
 
-const ContactForm = () => {
+const ContactForm = ({ data }) => {
   const submitFormHandler = (e) => {
     e.preventDefault();
   };
@@ -17,38 +17,30 @@ const ContactForm = () => {
   return (
     <section className="section">
       <Container>
-        <h1 className="heading-section mb-sm">Contact us</h1>
+        <h1 className="heading-section mb-sm">{data?.title}</h1>
         <div className="contact-form-grid">
           <div className="contact-form-content">
-            <h2 className="heading-thin-small mb-sm">
-              Do you have questions? Don’t hesitate to ask us – we’re here to
-              help!
-            </h2>
-            <p className="text-sm color-gray-2 mb-sm">
-              We just need a couple of hours! No more than 24 business hours
-              since receiving your issue ticket.
-            </p>
-            <p className="text-sm color-dark mb-sm">
-              If you’d like to book a consultation session, please go here.
-            </p>
+            <h2 className="heading-thin-small mb-sm">{data?.title2}</h2>
+            <p className="text-sm color-gray-2 mb-sm">{data?.description}</p>
+            <p className="text-sm color-dark mb-sm">{data?.description2}</p>
             <div className="details-grid">
               <div className="text-sm color-dark detail-item">
                 <div className="detail-item-icon">
                   <Phone size={14} color={"#007dff"} />
                 </div>
-                <a href="tel:+971 50 278 6164">+971 50 278 6164</a>
+                <a href={`tel:${data?.phone}`}>{data?.phone}</a>
               </div>
               <div className="text-sm color-dark detail-item">
                 <div className="detail-item-icon">
                   <Whatsapp size={14} color={"#007dff"} />
                 </div>
-                <span>+971 50 278 6164</span>
+                <span>{data?.phone2}</span>
               </div>
               <div className="text-sm color-dark detail-item">
                 <div className="detail-item-icon">
                   <Email size={14} color={"#007dff"} />
                 </div>
-                <a href="mailto:info@gulflogix.com">info@gulflogix.com</a>
+                <a href={`mailto:${data?.email}`}>{data?.email}</a>
               </div>
             </div>
           </div>
