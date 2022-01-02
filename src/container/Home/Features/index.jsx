@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 
 // Components
 import Container from "../../../components/UI/Container";
@@ -8,20 +9,20 @@ import FeaturesBlock from "../../../components/Features";
 //
 import "./index.scss";
 
-const Features = () => {
+const Features = ({ data }) => {
   return (
     <section className="section home-feature">
       <Container>
         <div className="home-features-wrapper">
-          <FeaturesBlock />
+          <FeaturesBlock features={data?.featuresList} />
         </div>
         <div className="home-features-cta">
           <h2 className="heading-big color-dark cta-heading">
-            We specialise in collaboration, content, application development
-            {" & "}
-            cloud solutions
+            {data?.cta?.mainTitle}
           </h2>
-          <Button color="orange">Learn more about what we offer</Button>
+          <Link to={data?.cta?.buttonLink}>
+            <Button color="orange">{data?.cta?.buttonText}</Button>
+          </Link>
         </div>
       </Container>
     </section>

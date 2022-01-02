@@ -7,17 +7,21 @@ import Container from "../../../components/UI/Container";
 //
 import "./index.scss";
 
-const ContactCTA = () => {
+const ContactCTA = ({ data }) => {
   return (
     <section className="section home-contact-cta-section">
       <Container>
         <div className="home-contact-cta">
           <h2 className="home-contact-cta-heading">
-            Can’t find what your looking for?
+            {data?.contactCta?.mainTitle}
           </h2>
-          <h3 className="home-contact-cta-heading2">We’re here to help.</h3>
-          <Link to="/contact">
-            <span className="underline home-contact-cta-link">Contact Us</span>
+          <h3 className="home-contact-cta-heading2">
+            {data?.contactCta?.level2Title}
+          </h3>
+          <Link to={data?.contactCta?.buttonLink}>
+            <span className="underline home-contact-cta-link">
+              {data?.contactCta?.buttonText}
+            </span>
           </Link>
         </div>
       </Container>

@@ -2,18 +2,30 @@
 
 .home-services {
   background-color: #fff;
-  background-image: url("../../../images/home-services-background.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top right;
-}
+  position: relative;
+  display: flex;
 
-.home-service-heading {
-  margin-bottom: 36px;
-}
+  .home-services-background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
 
-.home-service-text {
-  margin-bottom: 36px;
+    img {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      object-fit: cover;
+    }
+  }
+
+  .home-services-content {
+    z-index: 10;
+    width: 100%;
+  }
 }
 
 .home-services-grid {

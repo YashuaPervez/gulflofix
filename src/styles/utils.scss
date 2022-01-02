@@ -158,10 +158,11 @@
     height: 14px;
     width: 320px;
     background-color: $color-p-light;
-    top: 60%;
+    // top: 60%;
     left: -26px;
-    transform: translateY(-50%);
+    // transform: translateY(-50%);
     z-index: 0;
+    bottom: 10px;
   }
 
   .text {
