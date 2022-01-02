@@ -38,12 +38,27 @@ const Services = ({ data }) => {
           </h2>
           <p className="mb-lg text-lg text-gray">{data?.servicesDescription}</p>
           <div className="home-services-grid">
-            {data?.servicesList2?.map((service) => {
+            {data?.servicesList2?.map((service, i) => {
               const image = getImage(service.image);
+
+              const remainder = i % 3;
+              let color = "";
+
+              switch (remainder) {
+                case 0:
+                  color = "orange";
+                  break;
+                case 1:
+                  color = "yellow";
+                  break;
+                case 2:
+                  color = "teal";
+                  break;
+              }
 
               return (
                 <Paper>
-                  <div className="services-item-2 orange">
+                  <div className={`services-item-2 ${color}`}>
                     <div className="services-item-2-image">
                       {image ? (
                         <GatsbyImage image={image} loading="lazy" />

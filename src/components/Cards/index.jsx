@@ -20,8 +20,23 @@ const Cards = ({ heading, cards, paperProps }) => {
         <h2 className="heading-section color-dark mb-lg">{heading}</h2>
       )}
       <div className="card-grid">
-        {cards?.map((card) => {
+        {cards?.map((card, i) => {
           const image = getImage(card.image);
+
+          const remainder = i % 3;
+          let color = "";
+
+          switch (remainder) {
+            case 0:
+              color = "pink";
+              break;
+            case 1:
+              color = "blue";
+              break;
+            case 2:
+              color = "purple";
+              break;
+          }
 
           return (
             <Paper {...paperProps}>
@@ -29,7 +44,9 @@ const Cards = ({ heading, cards, paperProps }) => {
                 <div className="card-image mb-md">
                   <GatsbyImage image={image} loading="lazy" />
                 </div>
-                <h3 className="card-heading mb-sm color-pink heading-small">
+                <h3
+                  className={`card-heading mb-sm color-${color} heading-small`}
+                >
                   {card.title}
                 </h3>
                 <RichTextRenderer
@@ -39,7 +56,7 @@ const Cards = ({ heading, cards, paperProps }) => {
                   }}
                 />
                 <Link to={card.buttonLink}>
-                  <Button color="pink">{card.buttonText}</Button>
+                  <Button color={color}>{card.buttonText}</Button>
                 </Link>
               </div>
             </Paper>
