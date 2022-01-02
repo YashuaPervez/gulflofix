@@ -3,6 +3,7 @@
 .navbar {
   background-color: #fff;
   position: relative;
+  z-index: 50;
 
   @media (min-width: $desktop) {
     box-shadow: 0 4px 10px -10px rgba(0, 0, 0, 0.6);
@@ -34,7 +35,7 @@
           height: 0px;
           opacity: 1;
           visibility: visible;
-          height: 300px;
+          height: fit-content;
         }
       }
 

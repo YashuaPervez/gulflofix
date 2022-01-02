@@ -22,7 +22,7 @@ const Navbar = () => {
             <img src={LogoImage} />
           </Link>
           <div className={`collapse-able ${active ? "active" : ""}`}>
-            <Navigation active={active} />
+            <Navigation />
             <IconList />
           </div>
           <Toggle setActive={setActive} active={active} />
