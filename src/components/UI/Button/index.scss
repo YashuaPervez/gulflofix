@@ -11,6 +11,11 @@
   line-height: 40px;
   transition: 0.15s;
 
+  @media (max-width: #{$desktop - 1px}) {
+    padding: 0px 18px;
+    line-height: 32px;
+  }
+
   &:hover {
     color: #fff;
   }

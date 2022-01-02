@@ -9,9 +9,6 @@ import RichTextRenderer from "../RichTextRenderer";
 
 //
 import "./index.scss";
-import CodeImage from "../../images/home-services/code.png";
-import DegreeImage from "../../images/home-services/degree.png";
-import StatsImage from "../../images/home-services/stats.png";
 
 const Cards = ({ heading, cards, paperProps }) => {
   return (

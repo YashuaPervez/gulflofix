@@ -1,15 +1,19 @@
+@import "../../styles/variables.scss";
+
 .card-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 36px;
+
+  @media (min-width: $desktop) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
   .card-item {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .card-image {
-    }
     .card-heading {
       text-align: center;
       max-width: 190px;

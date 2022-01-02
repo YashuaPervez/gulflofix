@@ -10,7 +10,11 @@
 
 .home-features-wrapper {
   margin-bottom: 70px;
-  margin-top: -200px;
+  margin-top: -90px;
+
+  @media (min-width: $desktop) {
+    margin-top: -200px;
+  }
 }
 
 .home-features-cta {
