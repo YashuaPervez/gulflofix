@@ -14,6 +14,18 @@
     display: flex;
     align-items: center;
 
+    .navbar-content-image {
+      img {
+        width: 75%;
+      }
+
+      @media (min-width: $desktop) {
+        img {
+          width: 100%;
+        }
+      }
+    }
+
     .collapse-able {
       display: flex;
       align-items: flex-start;

@@ -18,7 +18,7 @@ const Navbar = () => {
     <header className="navbar">
       <Container>
         <div className="navbar-content">
-          <Link to="/">
+          <Link to="/" className="navbar-content-image">
             <img src={LogoImage} />
           </Link>
           <div className={`collapse-able ${active ? "active" : ""}`}>
