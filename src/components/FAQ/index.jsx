@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+// Components
+import RichTextRenderer from "../RichTextRenderer";
+
 //
 import { DownArrow } from "../icons";
 import "./index.scss";
@@ -31,7 +34,9 @@ const FAQ = ({ title, faqs }) => {
               <DownArrow color={activeQuestion === i ? "#007dff" : "#000"} />
             </div>
           </div>
-          <div className="faq-item-answer text-sm color-dark">{q.answer}</div>
+          <div className="faq-item-answer text-sm color-dark">
+            <RichTextRenderer richText={q.answer} />
+          </div>
         </div>
       ))}
     </div>

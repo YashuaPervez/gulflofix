@@ -7,12 +7,15 @@ import FAQ from "../../../components/FAQ";
 //
 import "./index.scss";
 
-const AllFaq = () => {
+const AllFaq = ({ data }) => {
   return (
     <section className="section faq-allfaq">
       <Container>
-        <h1 className="faq-allfaq-title mb-lg">Frequently asked questions</h1>
-        <FAQ
+        <h1 className="faq-allfaq-title mb-lg">{data?.title}</h1>
+        {data?.faqsList?.map((faq) => (
+          <FAQ title={faq.title} faqs={faq.questionList} />
+        ))}
+        {/* <FAQ
           title="General"
           faqs={[
             {
@@ -45,7 +48,7 @@ const AllFaq = () => {
               answer: "this is awesome",
             },
           ]}
-        />
+        /> */}
       </Container>
     </section>
   );

@@ -6,15 +6,15 @@ import CTA from "../../../components/CTA";
 
 import "./index.scss";
 
-const ContactCTA = () => {
+const ContactCTA = ({ data }) => {
   return (
     <section className="section">
       <Container>
         <CTA
-          headingText="Have questions?"
-          heading2Text="We’re here to help."
-          ctaText="Contact Us"
-          ctaLink="/contact-us"
+          headingText={data?.contactCta?.mainTitle}
+          heading2Text={data?.contactCta?.level2Title}
+          ctaText={data?.contactCta?.buttonText}
+          ctaLink={data?.contactCta?.buttonLink}
           headingClasses="color-blue heading-big"
           heading2Classes="color-dark contact-cta-heading2"
           ctaClasses="contact-cta-text"
