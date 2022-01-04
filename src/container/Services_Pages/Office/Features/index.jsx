@@ -1,4 +1,6 @@
 import React from "react";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import RichTextRenderer from "../../../../components/RichTextRenderer";
 
 // Components
 import Container from "../../../../components/UI/Container";
@@ -6,53 +8,36 @@ import Paper from "../../../../components/UI/Paper";
 
 //
 import "./index.scss";
-import OfficeFeatureOne from "../../../../images/services/office/office_feature_1.png";
-import OfficeFeatureTwo from "../../../../images/services/office/office_feature_2.png";
-import OfficeFeatureThree from "../../../../images/services/office/office_feature_3.png";
 
-const Features = () => {
+const Features = ({ data }) => {
   return (
     <section className="section">
       <Container>
         <h3 className="mb-lg heading-section color-dark">
-          GulfLogix can help you move your business to the cloud and benefit
-          from all of the following features:
+          {data?.featuresTitle}
         </h3>
         <Paper>
           <div className="services-office-features-grid">
-            <div className="services-office-features-item">
-              <div className="services-office-features-item-image">
-                <img src={OfficeFeatureOne} />
-              </div>
-              <div className="services-office-features-item-body">
-                <h3 className="color-dark heading-small">
-                  Microsoft Exchange Online
-                </h3>
-                <p className="color-gray-2 text-sm">Email in the cloud</p>
-              </div>
-            </div>
-            <div className="services-office-features-item">
-              <div className="services-office-features-item-image">
-                <img src={OfficeFeatureTwo} />
-              </div>
-              <div className="services-office-features-item-body">
-                <h3 className="color-dark heading-small">Microsoft Teams</h3>
-                <p className="color-gray-2 text-sm">
-                  Instant messaging and conferencing
-                </p>
-              </div>
-            </div>
-            <div className="services-office-features-item">
-              <div className="services-office-features-item-image">
-                <img src={OfficeFeatureThree} />
-              </div>
-              <div className="services-office-features-item-body">
-                <h3 className="color-dark heading-small">
-                  OneDrive for Business
-                </h3>
-                <p className="color-gray-2 text-sm">Personal file sharing</p>
-              </div>
-            </div>
+            {data?.featuresList?.map((item) => {
+              const image = getImage(item.image);
+
+              return (
+                <div className="services-office-features-item">
+                  <div className="services-office-features-item-image">
+                    <GatsbyImage loading="eager" image={image} />
+                  </div>
+                  <div className="services-office-features-item-body">
+                    <h3 className="color-dark heading-small">{item.title}</h3>
+                    <RichTextRenderer
+                      richText={item.description}
+                      config={{
+                        p: "color-gray-2 text-sm",
+                      }}
+                    />
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </Paper>
       </Container>

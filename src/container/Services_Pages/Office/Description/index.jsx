@@ -1,47 +1,31 @@
 import React from "react";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 
 // Components
+import RichTextRenderer from "../../../../components/RichTextRenderer";
 import Container from "../../../../components/UI/Container";
 import Button from "../../../../components/UI/Button";
 
 //
 import "./index.scss";
-import DescriptionImage from "../../../../images/services/office/office_description_image.png";
 
-const Description = () => {
+const Description = ({ data }) => {
+  const image = getImage(data?.content?.image);
+
   return (
     <section className="section">
       <Container>
         <div className="services-office-description-grid">
           <div className="services-office-description-image">
-            <img src={DescriptionImage} />
+            <GatsbyImage image={image} loading="lazy" />
           </div>
           <div className="services-office-description-content">
-            <p>
-              GulfLogix offers the complete spectrum of services in Microsoft
-              365. Let us help you boost your cloud transformation journey. We
-              help you understand and make full use of the licensing you’re
-              paying for.
-            </p>
-            <ul>
-              <li>
-                Make an impact in all areas of your business and lifestyle.
-              </li>
-              <li>Use Office 365 to make Work from Home easy!</li>
-              <li>
-                Office 365 keeps your staff communicating, collaborating, and
-                sharing.
-              </li>
-            </ul>
-            <p>
-              We can help you setup Office 365 quickly and efficiently so you
-              can experience complete mobility.
-            </p>
+            <RichTextRenderer richText={data?.content?.body} />
 
-            <p>
-              We are offering free advice and resources to help you transform.
-            </p>
-            <Button color="orange">Get Started Now</Button>
+            <Link to={data?.content?.buttonLink}>
+              <Button color="orange">{data?.content?.buttonText}</Button>
+            </Link>
           </div>
         </div>
       </Container>

@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .other-services-container {
   background-color: #f7f7f7;
 
@@ -5,6 +7,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
+
+    @media (min-width: $desktop) {
+      flex-direction: row;
+    }
 
     .other-services-image {
       width: 180px;
@@ -16,31 +23,48 @@
 
     .other-services-content {
       flex: 1;
-      margin-left: 210px;
       display: flex;
       flex-direction: column;
+      margin-top: 40px;
+
+      @media (min-width: $desktop) {
+        margin-left: 210px;
+        margin-top: 0px;
+      }
 
       .other-services-content-text {
-        margin-bottom: 50px;
+        margin-bottom: 24px;
+
+        @media (min-width: $desktop) {
+          margin-bottom: 50px;
+        }
       }
     }
   }
 
   .other-services-content-others-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 36px;
+    grid-template-columns: 1fr;
+    gap: 20px;
     width: 100%;
+
+    @media (min-width: $desktop) {
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+    }
 
     .other-services-content-others-item {
       display: flex;
       align-items: center;
 
       .other-services-content-others-image {
-        background-color: orange;
         height: 50px;
         width: 50px;
         margin-right: 16px;
+
+        img {
+          width: 100%;
+        }
       }
     }
   }

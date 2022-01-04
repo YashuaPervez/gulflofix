@@ -1,17 +1,38 @@
+@import "../../../../styles/variables.scss";
+
 .services-office-features-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $desktop) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
   .services-office-features-item {
     display: flex;
     align-items: center;
 
     &:not(:last-child) {
-      border-right: 2px solid rgb(234, 234, 234);
+      border-bottom: 2px solid rgb(234, 234, 234);
+      padding-bottom: 36px;
     }
 
     &:not(:first-child) {
-      padding-left: 36px;
+      padding-top: 36px;
+    }
+
+    @media (min-width: $desktop) {
+      &:not(:last-child) {
+        border-bottom: 0px;
+        border-right: 2px solid rgb(234, 234, 234);
+        padding-bottom: 0px;
+        padding-right: 36px;
+      }
+
+      &:not(:first-child) {
+        padding-top: 0px;
+        padding-left: 36px;
+      }
     }
 
     .services-office-features-item-image {

@@ -6,6 +6,9 @@ import Paper from "../UI/Paper";
 
 //
 import MSPartner from "../../images/microsoft-partner-logo.png";
+import OfficeImage from "../../images/home-services-2/office.svg";
+import PowerImage from "../../images/home-services-2/power.png";
+import ShareImage from "../../images/home-services-2/share.svg";
 import "./index.scss";
 
 const OtherServices = ({ ignore = "power" }) => {
@@ -26,7 +29,9 @@ const OtherServices = ({ ignore = "power" }) => {
               {ignore !== "power" && (
                 <Paper>
                   <div className="other-services-content-others-item">
-                    <div className="other-services-content-others-image"></div>
+                    <div className="other-services-content-others-image">
+                      <img src={PowerImage} />
+                    </div>
                     <div className="other-services-content-others-content">
                       <h3 className="heading-small color-yellow">
                         Power Platform
@@ -41,7 +46,9 @@ const OtherServices = ({ ignore = "power" }) => {
               {ignore !== "office" && (
                 <Paper>
                   <div className="other-services-content-others-item">
-                    <div className="other-services-content-others-image"></div>
+                    <div className="other-services-content-others-image">
+                      <img src={OfficeImage} />
+                    </div>
                     <div className="other-services-content-others-content">
                       <h3 className="heading-small color-orange">
                         Office 365 Services
@@ -56,7 +63,9 @@ const OtherServices = ({ ignore = "power" }) => {
               {ignore !== "share" && (
                 <Paper>
                   <div className="other-services-content-others-item">
-                    <div className="other-services-content-others-image"></div>
+                    <div className="other-services-content-others-image">
+                      <img src={ShareImage} />
+                    </div>
                     <div className="other-services-content-others-content">
                       <h3 className="heading-small color-teal">SharePoint</h3>
                       <a className="underline teal text-sm" href="#">

@@ -1,6 +1,13 @@
+@import "../../../../styles/variables.scss";
+
 .services-office-feature2-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $desktop) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   gap: 36px;
 
   .services-office-feature2-grid-item {

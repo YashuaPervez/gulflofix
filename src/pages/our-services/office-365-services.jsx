@@ -1,4 +1,6 @@
 import React from "react";
+import { graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 // Components
 import Layout from "../../components/Layout";
@@ -11,24 +13,36 @@ import Description from "../../container/Services_Pages/Office/Description";
 import OtherServices from "../../components/OtherServices";
 
 //
-import HeroBG from "../../images/services/office/office-365-banner-bg.png";
+// import HeroBG from "../../images/services/office/office-365-banner-bg.png";
 import HeroLogo from "../../images/services/office/logo.svg";
 
-const Office365Services = () => {
+const Office365Services = ({ data }) => {
+  const { content, featuresList, featuresList2, featuresTitle, heroCta } =
+    data.officepage;
+
   return (
     <Layout>
       <CommonHero
-        bgImage={HeroBG}
+        BgImage={() => (
+          <StaticImage
+            src="../../images/services/office/office-365-banner-bg.png"
+            placeholder="tracedSVG"
+            className="common-hero-image"
+          />
+        )}
+        // bgImage={HeroBG}
         logo={HeroLogo}
-        title="Office 365 Services"
+        title={heroCta.mainTitle}
         titleClasses="color-orange"
-        title2="Proficient consulting, services and support"
+        title2={heroCta.level2Title}
         buttonColor="orange"
+        buttonText={heroCta.buttonText}
+        buttonLink={heroCta.buttonLink}
       />
-      <Features />
-      <Features2 />
-      <Description />
-      <OtherServices />
+      <Features data={{ featuresTitle, featuresList }} />
+      <Features2 data={{ featuresList2 }} />
+      <Description data={{ content }} />
+      <OtherServices ignore="office" />
       <section className="section">
         <CTA
           headingText="Have questions?"
@@ -43,5 +57,47 @@ const Office365Services = () => {
     </Layout>
   );
 };
+
+export const query = graphql`
+  query MyQuery {
+    officepage: contentfulOffice365Page {
+      heroCta {
+        mainTitle
+        level2Title
+        buttonText
+        buttonLink
+      }
+      featuresTitle
+      featuresList {
+        title
+        description {
+          raw
+        }
+        image {
+          gatsbyImageData(placeholder: TRACED_SVG)
+        }
+      }
+      featuresList2 {
+        title
+        description {
+          raw
+        }
+        image {
+          gatsbyImageData(placeholder: TRACED_SVG)
+        }
+      }
+      content {
+        image {
+          gatsbyImageData(placeholder: TRACED_SVG)
+        }
+        body {
+          raw
+        }
+        buttonText
+        buttonLink
+      }
+    }
+  }
+`;
 
 export default Office365Services;
