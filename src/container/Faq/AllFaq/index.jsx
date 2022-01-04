@@ -15,40 +15,6 @@ const AllFaq = ({ data }) => {
         {data?.faqsList?.map((faq) => (
           <FAQ title={faq.title} faqs={faq.questionList} />
         ))}
-        {/* <FAQ
-          title="General"
-          faqs={[
-            {
-              question: "First Question",
-              answer: "this is awesome",
-            },
-            {
-              question: "First Question",
-              answer: "this is awesome",
-            },
-            {
-              question: "First Question",
-              answer: "this is awesome",
-            },
-          ]}
-        />
-        <FAQ
-          title="Microsoft Specific"
-          faqs={[
-            {
-              question: "First Question",
-              answer: "this is awesome",
-            },
-            {
-              question: "First Question",
-              answer: "this is awesome",
-            },
-            {
-              question: "First Question",
-              answer: "this is awesome",
-            },
-          ]}
-        /> */}
       </Container>
     </section>
   );

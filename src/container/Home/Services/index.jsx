@@ -27,9 +27,11 @@ const Services = ({ data }) => {
       </div>
       <div className="home-services-content">
         <Container>
-          <h2 className="heading-section color-dark mb-lg">
-            {data?.servicesTitle}
-          </h2>
+          {data?.servicesTitle && (
+            <h2 className="heading-section color-dark mb-lg">
+              {data?.servicesTitle}
+            </h2>
+          )}
           <div className="mb-lg">
             <Cards cards={data?.servicesList} />
           </div>
