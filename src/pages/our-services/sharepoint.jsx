@@ -1,4 +1,6 @@
 import React from "react";
+import { graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 // Components
 import Layout from "../../components/Layout";
@@ -10,22 +12,31 @@ import Features from "../../container/Services_Pages/Share/Features";
 import About from "../../container/Services_Pages/Share/About";
 
 //
-import HeroBG from "../../images/services/share/sharepoint-banner-bg.png";
 import HeroLogo from "../../images/services/share/logo.svg";
 
-const SharePoint = () => {
+const SharePoint = ({ data }) => {
+  const { heroCta, servicesTitle, services, content } = data.sharepoint;
+
   return (
     <Layout>
       <CommonHero
-        bgImage={HeroBG}
+        BgImage={() => (
+          <StaticImage
+            src="../../images/services/share/sharepoint-banner-bg.png"
+            placeholder="tracedSVG"
+            className="common-hero-image"
+          />
+        )}
         logo={HeroLogo}
-        title="Power Platform"
+        title={heroCta.mainTitle}
         titleClasses="color-teal"
-        title2="The Microsoft Power Platform is a low-code service that allows you to build business solutions and applications that run on multiple platforms and devices with little to no code. "
+        title2={heroCta.level2Title}
         buttonColor="teal"
+        buttonText={heroCta.buttonText}
+        buttonLink={heroCta.buttonLink}
       />
-      <Features />
-      <About />
+      <Features data={{ servicesTitle, services }} />
+      <About data={{ content }} />
       <OtherServices />
       <section className="section">
         <CTA
@@ -41,5 +52,35 @@ const SharePoint = () => {
     </Layout>
   );
 };
+
+export const query = graphql`
+  query SharePointPageQuery {
+    sharepoint: contentfulSharepointPage {
+      heroCta {
+        mainTitle
+        level2Title
+        buttonText
+        buttonLink
+      }
+      servicesTitle
+      services {
+        title
+        image {
+          gatsbyImageData(placeholder: TRACED_SVG)
+        }
+      }
+      content {
+        image {
+          gatsbyImageData(placeholder: TRACED_SVG)
+        }
+        body {
+          raw
+        }
+        buttonText
+        buttonLink
+      }
+    }
+  }
+`;
 
 export default SharePoint;
