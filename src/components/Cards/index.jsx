@@ -10,7 +10,7 @@ import RichTextRenderer from "../RichTextRenderer";
 //
 import "./index.scss";
 
-const Cards = ({ heading, cards, paperProps }) => {
+const Cards = ({ heading, cards, paperProps, colors }) => {
   return (
     <>
       {heading && (
@@ -23,16 +23,20 @@ const Cards = ({ heading, cards, paperProps }) => {
           const remainder = i % 3;
           let color = "";
 
-          switch (remainder) {
-            case 0:
-              color = "pink";
-              break;
-            case 1:
-              color = "blue";
-              break;
-            case 2:
-              color = "purple";
-              break;
+          if (colors) {
+            color = colors[remainder];
+          } else {
+            switch (remainder) {
+              case 0:
+                color = "pink";
+                break;
+              case 1:
+                color = "blue";
+                break;
+              case 2:
+                color = "purple";
+                break;
+            }
           }
 
           return (

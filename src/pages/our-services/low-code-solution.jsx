@@ -1,4 +1,6 @@
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
+import { graphql } from "gatsby";
 
 // Components
 import Layout from "../../components/Layout";
@@ -7,52 +9,47 @@ import Container from "../../components/UI/Container";
 import CTA from "../../components/CTA";
 import ImageContent from "../../components/ImageContent";
 import Cards from "../../components/Cards";
+import RichTextRenderer from "../../components/RichTextRenderer";
 
 //
-import HeroBG from "../../images/services/low-code-solution/no-code-banner-bg.png";
+// import HeroBG from "../../images/services/low-code-solution/no-code-banner-bg.png";
 import HeroLogo from "../../images/services/low-code-solution/logo.png";
 import ContentImage from "../../images/services/low-code-solution/no-code-img.png";
 
-const LowCodeSolution = () => {
+const LowCodeSolution = ({ data }) => {
+  const { heroCta, content, servicesTitle, services } = data.lowcodesolution;
+
   return (
     <Layout>
       <CommonHero
-        bgImage={HeroBG}
+        BgImage={() => (
+          <StaticImage
+            src="../../images/services/low-code-solution/no-code-banner-bg.png"
+            placeholder="tracedSVG"
+            className="common-hero-image"
+          />
+        )}
         logo={HeroLogo}
-        title="No-Code / Low-Code Solution"
+        title={heroCta.mainTitle}
         titleClasses="color-pink"
-        title2="Take advantage of the most exciting development in the world of business applications."
-        title3="Enter the low-code revolution!"
+        title2={heroCta?.level2Title}
+        title3={heroCta?.level3Title}
         buttonColor="pink"
         buttonText=""
       />
-      <ImageContent imgUrl={ContentImage} buttonColor="pink">
-        <p className="text-sm color-gray-2 mb-sm">
-          Increased business demand for faster software solutions have propelled
-          the adoption of low-code development platforms to the forefront. Many
-          Low code platforms are cloud based and largely promote an out of the
-          box experience and require less technical expertise for support.
-        </p>
-        <p className="text-sm color-gray-2 mb-sm">
-          Low code platforms allow you to build business solutions quicker, make
-          the right decisions faster, and to innovate and adapt your business in
-          the market. GulfLogix specializes in low code development across
-          multiple platforms.
-        </p>
-        <p className="text-sm color-gray-2 mb-sm">
-          Using these platforms, we build flexible solutions in web and mobile
-          applications rapidly. Our services in low-code platforms are
-          accelerating the journey to a digital business by changing the way
-          your business and IT works.
-        </p>
-        <p className="text-sm color-gray-2 mb-sm">
-          We analyze what a low-code platform means to your business and train
-          the IT personnel in your organization.
-        </p>
+      <ImageContent image={content.image} buttonColor="pink">
+        <RichTextRenderer
+          richText={content.body}
+          config={{ p: "text-sm color-gray-2 mb-sm" }}
+        />
       </ImageContent>
       <section className="section">
         <Container>
-          <Cards heading="Learn more about the services we offer" />
+          <Cards
+            heading={servicesTitle}
+            cards={services}
+            colors={["blue", "purple", "pink"]}
+          />
         </Container>
       </section>
       <section className="section">
@@ -69,5 +66,39 @@ const LowCodeSolution = () => {
     </Layout>
   );
 };
+
+export const query = graphql`
+  query LowCodeSolutionPageQuery {
+    lowcodesolution: contentfulLowCodeSolutionPage {
+      heroCta {
+        mainTitle
+        level2Title
+        level3Title
+      }
+      content {
+        image {
+          gatsbyImageData(placeholder: TRACED_SVG)
+        }
+        body {
+          raw
+        }
+        buttonText
+        buttonLink
+      }
+      servicesTitle
+      services {
+        image {
+          gatsbyImageData(placeholder: TRACED_SVG)
+        }
+        title
+        description {
+          raw
+        }
+        buttonText
+        buttonLink
+      }
+    }
+  }
+`;
 
 export default LowCodeSolution;

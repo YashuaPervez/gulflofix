@@ -1,4 +1,5 @@
 import React from "react";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 // Components
 import Container from "../UI/Container";
@@ -8,19 +9,21 @@ import Button from "../UI/Button";
 import "./index.scss";
 
 const ImageContent = ({
-  imgUrl,
+  image,
   children,
   buttonText = "Get Started Now",
   buttonColor,
   heading,
 }) => {
+  const imageToPass = getImage(image);
+
   return (
     <section className="section">
       <Container>
         <div className="common-image-content">
-          {imgUrl && (
+          {imageToPass && (
             <div className="common-image-content-image">
-              <img src={imgUrl} />
+              <GatsbyImage image={imageToPass} loading="eager" />
             </div>
           )}
           <div className="common-image-content-content">
