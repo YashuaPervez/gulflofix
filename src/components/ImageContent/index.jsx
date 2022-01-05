@@ -1,5 +1,6 @@
 import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 
 // Components
 import Container from "../UI/Container";
@@ -12,6 +13,7 @@ const ImageContent = ({
   image,
   children,
   buttonText = "Get Started Now",
+  buttonLink = "",
   buttonColor,
   heading,
 }) => {
@@ -31,7 +33,11 @@ const ImageContent = ({
               <h3 className="heading-small color-dark mb-sm">{heading}</h3>
             )}
             {children}
-            {buttonText && <Button color={buttonColor}>{buttonText}</Button>}
+            {buttonText && (
+              <Link to={buttonLink}>
+                <Button color={buttonColor}>{buttonText}</Button>
+              </Link>
+            )}
           </div>
         </div>
       </Container>
