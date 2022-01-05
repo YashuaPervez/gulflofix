@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { Link } from "gatsby";
 
 // Components
@@ -19,18 +19,8 @@ const CommonHero = ({
   buttonText = "Get Started Now",
   buttonLink = "https://www.gulflogix.ae/online-store/",
 }) => {
-  // const imageRef = useRef();
-
-  // useEffect(() => {
-  //   const height = imageRef.current.clientHeight;
-  //   const width = imageRef.current.clientWidth;
-
-  //   console.log({ height, width });
-  // }, []);
-
   return (
     <section className="common-hero">
-      {/* <img src={bgImage} className="common-hero-image" ref={imageRef} /> */}
       {BgImage && <BgImage />}
       <img src={logo} className="common-hero-logo" />
       <div className="common-hero-content">

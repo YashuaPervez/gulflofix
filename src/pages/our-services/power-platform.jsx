@@ -1,4 +1,6 @@
 import React from "react";
+import { graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 // Components
 import Layout from "../../components/Layout";
@@ -11,23 +13,32 @@ import About from "../../container/Services_Pages/Power/About";
 import Apps2 from "../../container/Services_Pages/Power/Apps2";
 
 //
-import HeroBG from "../../images/services/power/power-plaform-banner-bg.png";
+// import HeroBG from "../../images/services/power/power-plaform-banner-bg.png";
 import HeroLogo from "../../images/services/power/logo.png";
 
-const PowerPlatform = () => {
+const PowerPlatform = ({ data }) => {
+  const { heroCta, servicesTitle, services, content, services2 } =
+    data.powerplatform;
+
   return (
     <Layout>
       <CommonHero
-        bgImage={HeroBG}
+        BgImage={() => (
+          <StaticImage
+            src="../../images/services/power/power-plaform-banner-bg.png"
+            placeholder="tracedSVG"
+            className="common-hero-image"
+          />
+        )}
         logo={HeroLogo}
-        title="Power Platform"
+        title={heroCta.mainTitle}
         titleClasses="color-yellow"
-        title2="The Microsoft Power Platform is a low-code service that allows you to build business solutions and applications that run on multiple platforms and devices with little to no code. "
+        title2={heroCta.level2Title}
         buttonColor="yellow"
       />
-      <Apps />
-      <About />
-      <Apps2 />
+      <Apps data={{ servicesTitle, services }} />
+      <About data={{ content }} />
+      <Apps2 data={{ services2 }} />
       <OtherServices />
       <section className="section">
         <CTA
@@ -43,5 +54,47 @@ const PowerPlatform = () => {
     </Layout>
   );
 };
+
+export const query = graphql`
+  query PowerPlatformPage {
+    powerplatform: contentfulPowerPlatformPage {
+      heroCta {
+        mainTitle
+        level2Title
+        buttonText
+        buttonLink
+      }
+      servicesTitle
+      services {
+        title
+        image {
+          gatsbyImageData(placeholder: TRACED_SVG)
+        }
+        description {
+          raw
+        }
+      }
+      content {
+        image {
+          gatsbyImageData(placeholder: TRACED_SVG)
+        }
+        body {
+          raw
+        }
+        buttonText
+        buttonLink
+      }
+      services2 {
+        title
+        description {
+          raw
+        }
+        image {
+          gatsbyImageData(placeholder: TRACED_SVG)
+        }
+      }
+    }
+  }
+`;
 
 export default PowerPlatform;

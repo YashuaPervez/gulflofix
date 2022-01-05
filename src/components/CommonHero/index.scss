@@ -21,9 +21,10 @@
     max-width: 660px;
 
     @media (max-width: #{$desktop - 1px}) {
-      font-size: 2.8vw;
-      line-height: 6.8vw;
-      margin-bottom: 0px;
+      font-size: 2.2vw;
+      line-height: 2.8vw;
+      margin-bottom: 1.2vw;
+      margin-top: 1.2vw;
     }
   }
   .common-hero-title3 {

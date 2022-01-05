@@ -1,12 +1,23 @@
+@import "../../../../styles/variables.scss";
+
 .services-power-about-section {
   padding: 0px;
 
   .services-power-about {
     display: flex;
     align-items: center;
+    flex-direction: column;
+
+    @media (min-width: $desktop) {
+      flex-direction: row;
+    }
 
     .services-power-about-image {
-      width: 44%;
+      width: 56%;
+
+      @media (min-width: $desktop) {
+        width: 44%;
+      }
 
       img {
         width: 100%;
@@ -15,7 +26,12 @@
 
     .services-power-about-content {
       flex: 1;
-      padding-left: 90px;
+      padding-top: 30px;
+
+      @media (min-width: $desktop) {
+        padding-left: 90px;
+        padding-top: 0px;
+      }
     }
   }
 }

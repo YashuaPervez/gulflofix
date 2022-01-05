@@ -1,9 +1,20 @@
+@import "../../../../styles/variables.scss";
+
 .services-power-apps2-item {
   display: flex;
   align-items: center;
+  flex-direction: column;
+
+  @media (min-width: $desktop) {
+    flex-direction: row;
+  }
 
   .services-power-apps2-item-image {
-    width: 320px;
+    width: 260px;
+
+    @media (min-width: $desktop) {
+      width: 320px;
+    }
 
     img {
       width: 100%;
@@ -12,7 +23,12 @@
 
   .services-power-apps2-item-content {
     flex: 1;
-    padding-left: 72px;
+    padding-top: 44px;
+
+    @media (min-width: $desktop) {
+      padding-top: 0px;
+      padding-left: 72px;
+    }
   }
 
   &:not(:last-child) {

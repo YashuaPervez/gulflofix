@@ -59,7 +59,7 @@ const Office365Services = ({ data }) => {
 };
 
 export const query = graphql`
-  query MyQuery {
+  query Office365PageQuery {
     officepage: contentfulOffice365Page {
       heroCta {
         mainTitle
