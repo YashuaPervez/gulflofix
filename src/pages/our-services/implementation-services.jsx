@@ -1,4 +1,6 @@
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
+import { graphql } from "gatsby";
 
 // Components
 import Layout from "../../components/Layout";
@@ -8,39 +10,52 @@ import CTA from "../../components/CTA";
 import ImageContent from "../../components/ImageContent";
 import Cards from "../../components/Cards";
 import OtherServices from "../../components/OtherServices";
+import RichTextRenderer from "../../components/RichTextRenderer";
 
 //
-import HeroBG from "../../images/services/implementation-services/implementation-services-banner-bg.png";
 import HeroLogo from "../../images/services/implementation-services/logo.png";
-import ContentImage from "../../images/services/implementation-services/implementation-services-img.png";
 
-const ImplementationServices = () => {
+const ImplementationServices = ({ data }) => {
+  const { heroCta, content, servicesTitle, servicesList } =
+    data.implementationServices;
+
   return (
     <Layout>
       <CommonHero
-        bgImage={HeroBG}
+        BgImage={() => (
+          <StaticImage
+            src="../../images/services/implementation-services/implementation-services-banner-bg.png"
+            className="common-hero-image"
+          />
+        )}
         logo={HeroLogo}
-        title="Implementation Services"
+        title={heroCta.mainTitle}
         titleClasses="color-purple"
-        title2="Data is increasingly flowing from multiple sources and businesses that understand how to consume this data will gain deep insight and guide their business for better results. "
+        title2={heroCta.level2Title}
         buttonColor="purple"
         buttonText=""
       />
-      <ImageContent imgUrl={ContentImage} buttonColor="purple">
-        <p className="text-sm color-gray-2 mb-sm">
-          We work together to meet challenges effectively by using Microsoft
-          Power Platform to analyze data, build solutions, automate processes,
-          and create virtual agents.
-        </p>
-        <p className="text-sm color-gray-2 mb-sm">
-          We will work with you to automate your organization’s business
-          processes, utilizing forms and flows created with the Power Platform.
-        </p>
+      <ImageContent
+        image={content.image}
+        buttonColor="purple"
+        buttonLink={content.buttonLink}
+        buttonText={content.buttonText}
+      >
+        <RichTextRenderer
+          richText={content.body}
+          config={{
+            p: "text-sm color-gray-2 mb-sm",
+          }}
+        />
       </ImageContent>
       <OtherServices />
       <section className="section">
         <Container>
-          <Cards heading="Learn more about the services we offer" />
+          <Cards
+            heading={servicesTitle}
+            cards={servicesList}
+            colors={["pink", "blue", "pink"]}
+          />
         </Container>
       </section>
       <section className="section">
@@ -57,5 +72,38 @@ const ImplementationServices = () => {
     </Layout>
   );
 };
+
+export const query = graphql`
+  query ImplementationServicesQueryPage {
+    implementationServices: contentfulImplementationServicesPage {
+      heroCta {
+        mainTitle
+        level2Title
+      }
+      content {
+        image {
+          gatsbyImageData(placeholder: TRACED_SVG)
+        }
+        body {
+          raw
+        }
+        buttonText
+        buttonLink
+      }
+      servicesTitle
+      servicesList {
+        image {
+          gatsbyImageData(placeholder: TRACED_SVG)
+        }
+        title
+        description {
+          raw
+        }
+        buttonText
+        buttonLink
+      }
+    }
+  }
+`;
 
 export default ImplementationServices;

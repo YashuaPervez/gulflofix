@@ -1,9 +1,20 @@
+@import "../../styles/variables.scss";
+
 .common-image-content {
   display: flex;
   align-items: center;
+  flex-direction: column;
+
+  @media (min-width: $desktop) {
+    flex-direction: row;
+  }
 
   .common-image-content-image {
-    width: 50%;
+    width: 75%;
+
+    @media (min-width: $desktop) {
+      width: 50%;
+    }
 
     img {
       width: 100%;
@@ -11,6 +22,11 @@
   }
   .common-image-content-content {
     flex: 1;
-    padding-left: 64px;
+    padding-top: 32px;
+
+    @media (min-width: $desktop) {
+      padding-top: 0px;
+      padding-left: 64px;
+    }
   }
 }
