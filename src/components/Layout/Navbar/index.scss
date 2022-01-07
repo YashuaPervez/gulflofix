@@ -1,5 +1,37 @@
 @import "../../../styles/variables.scss";
 
+.top-bar {
+  background-color: black;
+  color: #fff;
+
+  ul {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+
+    li {
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+    }
+
+    .top-bar-link-item {
+      display: flex;
+      align-items: center;
+
+      .top-bar-link-item-text {
+        display: block;
+        margin-right: 4px;
+      }
+      .top-bar-link-item-icon {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}
+
 .navbar {
   background-color: #fff;
   position: relative;
