@@ -13,7 +13,6 @@ import Description from "../../container/Services_Pages/Office/Description";
 import OtherServices from "../../components/OtherServices";
 
 //
-// import HeroBG from "../../images/services/office/office-365-banner-bg.png";
 import HeroLogo from "../../images/services/office/logo.svg";
 
 const Office365Services = ({ data }) => {
@@ -30,7 +29,6 @@ const Office365Services = ({ data }) => {
             className="common-hero-image"
           />
         )}
-        // bgImage={HeroBG}
         logo={HeroLogo}
         title={heroCta.mainTitle}
         titleClasses="color-orange"
@@ -39,8 +37,20 @@ const Office365Services = ({ data }) => {
         buttonText={heroCta.buttonText}
         buttonLink={heroCta.buttonLink}
       />
-      <Features data={{ featuresTitle, featuresList }} />
-      <Features2 data={{ featuresList2 }} />
+      <div className="office-365-features">
+        <div className="image">
+          <StaticImage
+            src="../../images/office-365-bg-1.png"
+            loading="lazy"
+            placeholder="tracedSVG"
+          />
+        </div>
+        <div className="content">
+          <Features data={{ featuresTitle, featuresList }} />
+          <Features2 data={{ featuresList2 }} />
+        </div>
+      </div>
+
       <Description data={{ content }} />
       <OtherServices ignore="office" />
       <section className="section">
