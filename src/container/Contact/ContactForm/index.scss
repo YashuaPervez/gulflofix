@@ -1,7 +1,14 @@
+@import "../../../styles/variables.scss";
+
 .contact-form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 90px;
+  grid-template-columns: 1fr;
+  gap: 40px;
+
+  @media (min-width: $desktop) {
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+  }
 
   .contact-form-form {
     .form-layout {
@@ -24,7 +31,11 @@
 
   .details-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    @media (min-width: $desktop) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
 
     .detail-item {
       display: flex;
