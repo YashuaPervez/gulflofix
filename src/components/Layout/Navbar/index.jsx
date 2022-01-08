@@ -6,6 +6,7 @@ import Container from "../../UI/Container";
 import Navigation from "./Navigation";
 import IconList from "./IconList";
 import Toggle from "./Toggle";
+import SearchComponent from "../../Search";
 
 //
 import LogoImage from "../../../images/logo.png";
@@ -14,9 +15,11 @@ import "./index.scss";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
     <>
+      <SearchComponent searchOpen={searchOpen} setSearchOpen={setSearchOpen} />
       <div className="top-bar">
         <Container>
           <ul>
@@ -46,8 +49,11 @@ const Navbar = () => {
               <img src={LogoImage} />
             </Link>
             <div className={`collapse-able ${active ? "active" : ""}`}>
-              <Navigation />
-              <IconList />
+              <Navigation
+                searchOpen={searchOpen}
+                setSearchOpen={setSearchOpen}
+              />
+              <IconList searchOpen={searchOpen} setSearchOpen={setSearchOpen} />
             </div>
             <Toggle setActive={setActive} active={active} />
           </div>

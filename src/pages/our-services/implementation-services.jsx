@@ -49,14 +49,23 @@ const ImplementationServices = ({ data }) => {
         />
       </ImageContent>
       <OtherServices />
-      <section className="section">
-        <Container>
-          <Cards
-            heading={servicesTitle}
-            cards={servicesList}
-            colors={["pink", "blue", "pink"]}
+      <section className="section bg-image">
+        <div className="image">
+          <StaticImage
+            loading="lazy"
+            placeholder="tracedSVG"
+            src="../../images/implementation-services-blob.png"
           />
-        </Container>
+        </div>
+        <div className="content">
+          <Container>
+            <Cards
+              heading={servicesTitle}
+              cards={servicesList}
+              colors={["pink", "blue", "pink"]}
+            />
+          </Container>
+        </div>
       </section>
       <section className="section">
         <CTA

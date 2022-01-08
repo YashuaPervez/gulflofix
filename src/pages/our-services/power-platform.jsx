@@ -13,7 +13,6 @@ import About from "../../container/Services_Pages/Power/About";
 import Apps2 from "../../container/Services_Pages/Power/Apps2";
 
 //
-// import HeroBG from "../../images/services/power/power-plaform-banner-bg.png";
 import HeroLogo from "../../images/services/power/logo.png";
 
 const PowerPlatform = ({ data }) => {
@@ -37,8 +36,19 @@ const PowerPlatform = ({ data }) => {
         buttonColor="yellow"
       />
       <Apps data={{ servicesTitle, services }} />
-      <About data={{ content }} />
-      <Apps2 data={{ services2 }} />
+      <div className="office-description-container">
+        <div className="image">
+          <StaticImage
+            src="../../images/power-platform-bg.png"
+            placeholder="tracedSVG"
+            loading="lazy"
+          />
+        </div>
+        <div className="content">
+          <About data={{ content }} />
+          <Apps2 data={{ services2 }} />
+        </div>
+      </div>
       <OtherServices />
       <section className="section">
         <CTA

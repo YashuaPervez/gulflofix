@@ -4,7 +4,7 @@ import { useFormContext } from "react-hook-form";
 //
 import "./index.scss";
 
-const Input = ({ name, id, placeholder, text, error }) => {
+const Input = ({ name, id, placeholder, text, error, className }) => {
   const { register } = useFormContext();
 
   return (
@@ -22,7 +22,7 @@ const Input = ({ name, id, placeholder, text, error }) => {
           name={name}
           id={id}
           placeholder={placeholder}
-          className="form-input"
+          className={`${className || "form-input"}`}
           {...register(id)}
         />
       )}

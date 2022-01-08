@@ -4,6 +4,10 @@
   background-color: black;
   color: #fff;
 
+  @media (max-width: #{$desktop - 1px}) {
+    display: none;
+  }
+
   ul {
     height: 42px;
     display: flex;
@@ -36,9 +40,11 @@
   background-color: #fff;
   position: relative;
   z-index: 50;
+  border-bottom: 1px solid rgb(234, 234, 234);
 
   @media (min-width: $desktop) {
     box-shadow: 0 4px 10px -10px rgba(0, 0, 0, 0.6);
+    border-bottom: none;
   }
 
   .navbar-content {

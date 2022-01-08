@@ -8,7 +8,7 @@ import Button from "../../../UI/Button";
 import { DownArrow, Search, Bag } from "../../../icons";
 import "./index.scss";
 
-const Navigation = () => {
+const Navigation = ({ setSearchOpen }) => {
   const [dropdownOpen, setDropDownOpen] = useState(false);
 
   const navigation = [
@@ -64,7 +64,7 @@ const Navigation = () => {
     },
     {
       text: "Shop",
-      link: "/shop",
+      link: "https://www.gulflogix.ae/online-store/",
       type: "link",
     },
     {
@@ -84,10 +84,14 @@ const Navigation = () => {
       link: "/search",
       type: "link",
       classes: "hide-desktop",
+      onClick: () => {
+        console.log("onclick");
+        setSearchOpen(true);
+      },
     },
     {
       text: <Bag size={16} />,
-      link: "/cart",
+      link: "https://www.gulflogix.ae/cart",
       type: "link",
       classes: "hide-desktop",
     },
@@ -118,15 +122,18 @@ const Navigation = () => {
                 <div className="link-container">
                   <Link
                     className="text"
-                    to={navItem.link}
+                    to={navItem.onClick ? "#" : navItem.link}
                     activeClassName="active"
+                    onClick={navItem.onClick}
                   >
                     {navItem.text}
                   </Link>
                   {hasChildren && (
                     <button
                       className="end"
-                      onClick={() => setDropDownOpen((prev) => !prev)}
+                      onClick={() => {
+                        setDropDownOpen((prev) => !prev);
+                      }}
                     >
                       <DownArrow />
                     </button>

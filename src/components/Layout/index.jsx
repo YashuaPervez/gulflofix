@@ -10,6 +10,7 @@ import "../../styles/global.scss";
 const Layout = ({ children }) => {
   return (
     <>
+      <div id="search-popover-placeholder"></div>
       <Navbar />
       <main>{children}</main>
       <Footer />

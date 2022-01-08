@@ -1,0 +1,73 @@
+@import "../../styles/variables.scss";
+
+.search-modal {
+  background-color: rgba(20, 22, 24, 0.95);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.6s;
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .search-modal-controls {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      font-size: 28px;
+      color: #fff;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  .search-modal-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .search-modal-input {
+      width: 100%;
+      max-width: 730px;
+      border: 1px solid #fff;
+      height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0px 48px;
+
+      input {
+        flex: 1;
+        margin-right: 20px;
+        height: 60px;
+        font-size: 32px;
+        color: #fff;
+        background-color: transparent;
+        border: none;
+        outline: none;
+
+        @media (max-width: #{$desktop - 1px}) {
+          width: 260px;
+        }
+      }
+
+      button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+    }
+  }
+}

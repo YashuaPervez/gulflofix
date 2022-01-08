@@ -3,16 +3,13 @@ import { Link } from "gatsby";
 
 // Components
 import Container from "../../UI/Container";
+import SubscribeForm from "./SubscribeForm";
 
 //
 import LogoWhite from "../../../images/logo-white.png";
 import "./index.scss";
 
 const Footer = () => {
-  const subscribeHandler = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <>
       <footer className="footer">
@@ -26,84 +23,91 @@ const Footer = () => {
 
               <ul className="footer-list">
                 <li>
-                  <Link to="/">
+                  <Link to="/our-services">
                     <span className="text text-link">
                       Learn about our services
                     </span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/">
+                  <Link to="/about-us">
                     <span className="text text-link">
-                      Learn about our services
+                      Find out more about us
                     </span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/">
+                  <a href="https://www.gulflogix.ae/online-store/">
+                    <span className="text text-link">Buy service hours</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="footer-grid-item">
+              <h3 className="footer-heading">Need help?</h3>
+
+              <ul className="footer-list">
+                <li>
+                  <a href="#">
+                    <span className="text text-link">Online support</span>
+                  </a>
+                </li>
+                <li>
+                  <Link to="/faq">
                     <span className="text text-link">
-                      Learn about our services
+                      Frequently Asked Questions
                     </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact-us">
+                    <span className="text text-link">Contact Us</span>
                   </Link>
                 </li>
               </ul>
             </div>
             <div className="footer-grid-item">
-              <h3 className="footer-heading">Take a look around</h3>
+              <h3 className="footer-heading">Legal</h3>
 
               <ul className="footer-list">
                 <li>
-                  <Link to="/">
+                  <a href="https://www.gulflogix.ae/terms-conditions/">
                     <span className="text text-link">
-                      Learn about our services
+                      {"Terms & Conditions"}
                     </span>
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link to="/">
+                  <a href="https://www.gulflogix.ae/privacy-policy/">
                     <span className="text text-link">
                       Learn about our services
                     </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/">
-                    <span className="text text-link">
-                      Learn about our services
-                    </span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="footer-grid-item">
-              <h3 className="footer-heading">Take a look around</h3>
-
-              <ul className="footer-list">
-                <li>
-                  <Link to="/">
-                    <span className="text text-link">
-                      Learn about our services
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/">
-                    <span className="text text-link">
-                      Learn about our services
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/">
-                    <span className="text text-link">
-                      Learn about our services
-                    </span>
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
             <div className="footer-grid-item">
               <h3 className="footer-heading">Connect with us</h3>
+              <ul className="footer-list">
+                <li>
+                  <a target="_blank" href="https://www.facebook.com/gulflogix/">
+                    <span className="text text-link">Facebook</span>
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://twitter.com/gulflogix">
+                    <span className="text text-link">Twitter</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://www.linkedin.com/company/gulflogix"
+                  >
+                    <span className="text text-link">Linkedin</span>
+                  </a>
+                </li>
+              </ul>
             </div>
             <div className="footer-grid-item">
               <h3 className="footer-heading">Keep updated</h3>
@@ -111,14 +115,7 @@ const Footer = () => {
                 Sign up for our newsletter for industry trends, updates, special
                 offers and more
               </p>
-              <form className="footer-form" onSubmit={subscribeHandler}>
-                <div className="footer-element">
-                  <input className="footer-input" />
-                </div>
-                <div className="footer-element">
-                  <button className="footer-button">Submit</button>
-                </div>
-              </form>
+              <SubscribeForm />
             </div>
           </div>
         </Container>

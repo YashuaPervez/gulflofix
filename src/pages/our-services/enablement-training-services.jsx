@@ -12,9 +12,9 @@ import Cards from "../../components/Cards";
 import RichTextRenderer from "../../components/RichTextRenderer";
 
 //
-// import HeroBG from "../../images/services/enablement-training-services/enablement-training-banner-bg.png";
+// import image1 from "../../images/enablement-training-blob01-bg.png";
+// import image2 from "../../images/enablement-training-blob02-bg.png";
 import HeroLogo from "../../images/services/enablement-training-services/logo.png";
-import ContentImage from "../../images/services/low-code-solution/no-code-img.png";
 
 const EnablementTrainingServices = ({ data }) => {
   const {
@@ -43,17 +43,26 @@ const EnablementTrainingServices = ({ data }) => {
         buttonColor="blue"
         buttonText=""
       />
-      <section className="section">
-        <Container>
-          <Cards
-            heading={trainingsTitle}
-            paperProps={{
-              type: "outlined",
-            }}
-            cards={trainingsList}
-            colors={["yellow", "purple", "blue"]}
+      <section className="section bg-image">
+        <div className="image">
+          <StaticImage
+            loading="lazy"
+            placeholder="tracedSVG"
+            src="../../images/enablement-training-blob01-bg.png"
           />
-        </Container>
+        </div>
+        <div className="content">
+          <Container>
+            <Cards
+              heading={trainingsTitle}
+              paperProps={{
+                type: "outlined",
+              }}
+              cards={trainingsList}
+              colors={["yellow", "purple", "blue"]}
+            />
+          </Container>
+        </div>
       </section>
       <ImageContent
         heading={content.title}
@@ -61,20 +70,30 @@ const EnablementTrainingServices = ({ data }) => {
         buttonColor="blue"
         buttonText={content.buttonText}
         buttonLink={content.buttonLink}
+        removePadding
       >
         <RichTextRenderer
           richText={content.body}
           config={{ p: "text-sm color-gray-2 mb-sm" }}
         />
       </ImageContent>
-      <section className="section">
-        <Container>
-          <Cards
-            heading={servicesTitle}
-            cards={servicesList}
-            colors={["pink", "purple", "pink"]}
+      <section className="section bg-image">
+        <div className="image">
+          <StaticImage
+            loading="lazy"
+            placeholder="tracedSVG"
+            src="../../images/enablement-training-blob02-bg.png"
           />
-        </Container>
+        </div>
+        <div className="content">
+          <Container>
+            <Cards
+              heading={servicesTitle}
+              cards={servicesList}
+              colors={["pink", "purple", "pink"]}
+            />
+          </Container>
+        </div>
       </section>
       <section className="section">
         <CTA
@@ -82,9 +101,9 @@ const EnablementTrainingServices = ({ data }) => {
           heading2Text="Check out our frequently asked questions"
           ctaText="FAQs"
           ctaLink="/faq"
-          headingClasses="color-pink heading-big"
+          headingClasses="color-blue heading-big"
           heading2Classes="color-dark contact-cta-heading2"
-          ctaClasses="pink"
+          ctaClasses="blue"
         />
       </section>
     </Layout>

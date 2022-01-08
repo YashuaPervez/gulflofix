@@ -12,9 +12,8 @@ import Cards from "../../components/Cards";
 import RichTextRenderer from "../../components/RichTextRenderer";
 
 //
-// import HeroBG from "../../images/services/low-code-solution/no-code-banner-bg.png";
+// import image from "../../images/no-code-blob.png";
 import HeroLogo from "../../images/services/low-code-solution/logo.png";
-import ContentImage from "../../images/services/low-code-solution/no-code-img.png";
 
 const LowCodeSolution = ({ data }) => {
   const { heroCta, content, servicesTitle, services } = data.lowcodesolution;
@@ -43,14 +42,23 @@ const LowCodeSolution = ({ data }) => {
           config={{ p: "text-sm color-gray-2 mb-sm" }}
         />
       </ImageContent>
-      <section className="section">
-        <Container>
-          <Cards
-            heading={servicesTitle}
-            cards={services}
-            colors={["blue", "purple", "pink"]}
+      <section className="section bg-image">
+        <div className="image">
+          <StaticImage
+            loading="lazy"
+            placeholder="tracedSVG"
+            src="../../images/no-code-blob.png"
           />
-        </Container>
+        </div>
+        <div className="content">
+          <Container>
+            <Cards
+              heading={servicesTitle}
+              cards={services}
+              colors={["blue", "purple", "pink"]}
+            />
+          </Container>
+        </div>
       </section>
       <section className="section">
         <CTA

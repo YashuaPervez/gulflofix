@@ -16,11 +16,12 @@ const ImageContent = ({
   buttonLink = "",
   buttonColor,
   heading,
+  removePadding,
 }) => {
   const imageToPass = getImage(image);
 
   return (
-    <section className="section">
+    <section className={removePadding ? "" : "section"}>
       <Container>
         <div className="common-image-content">
           {imageToPass && (

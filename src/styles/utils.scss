@@ -72,8 +72,8 @@
 }
 
 .section {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 44px;
+  padding-bottom: 44px;
 
   @media (min-width: $desktop) {
     padding-top: 90px;
@@ -167,5 +167,32 @@
 
   .text {
     z-index: 1;
+  }
+}
+
+.bg-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  .image {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .content {
+    z-index: 10;
   }
 }
