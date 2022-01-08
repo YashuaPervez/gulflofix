@@ -9,6 +9,9 @@ const RichTextRenderer = ({ richText, config }) => {
         <p className={config?.p || ""}>{children}</p>
       ),
     },
+    renderMark: {
+      [MARKS.BOLD]: (text) => <b style={{ color: "rgb(72 72 72)" }}>{text}</b>,
+    },
   };
 
   return renderRichText(richText, options);
