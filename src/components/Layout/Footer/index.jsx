@@ -6,6 +6,7 @@ import Container from "../../UI/Container";
 import SubscribeForm from "./SubscribeForm";
 
 //
+import { Facebook, Twitter, LinkedIn } from "../../icons";
 import LogoWhite from "../../../images/logo-white.png";
 import "./index.scss";
 
@@ -71,17 +72,15 @@ const Footer = () => {
 
               <ul className="footer-list">
                 <li>
-                  <a href="https://www.gulflogix.ae/terms-conditions/">
+                  <a href="/terms-conditions">
                     <span className="text text-link">
                       {"Terms & Conditions"}
                     </span>
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.gulflogix.ae/privacy-policy/">
-                    <span className="text text-link">
-                      Learn about our services
-                    </span>
+                  <a href="/privacy-policy">
+                    <span className="text text-link">Privacy Policy</span>
                   </a>
                 </li>
               </ul>
@@ -91,12 +90,22 @@ const Footer = () => {
               <ul className="footer-list">
                 <li>
                   <a target="_blank" href="https://www.facebook.com/gulflogix/">
-                    <span className="text text-link">Facebook</span>
+                    <span className="text text-link">
+                      <div className="icon">
+                        <Facebook />
+                      </div>
+                      <span>Facebook</span>
+                    </span>
                   </a>
                 </li>
                 <li>
                   <a target="_blank" href="https://twitter.com/gulflogix">
-                    <span className="text text-link">Twitter</span>
+                    <span className="text text-link">
+                      <div className="icon">
+                        <Twitter />
+                      </div>
+                      <span>Twitter</span>
+                    </span>
                   </a>
                 </li>
                 <li>
@@ -104,7 +113,12 @@ const Footer = () => {
                     target="_blank"
                     href="https://www.linkedin.com/company/gulflogix"
                   >
-                    <span className="text text-link">Linkedin</span>
+                    <span className="text text-link">
+                      <div className="icon">
+                        <LinkedIn />
+                      </div>
+                      <span>Linked In</span>
+                    </span>
                   </a>
                 </li>
               </ul>
