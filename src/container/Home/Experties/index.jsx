@@ -7,7 +7,6 @@ import Paper from "../../../components/UI/Paper";
 
 //
 import "./index.scss";
-import AutomotiveImage from "../../../images/home-experties/automotive.png";
 
 const Experties = ({ data }) => {
   return (

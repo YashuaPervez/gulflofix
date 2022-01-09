@@ -4,6 +4,8 @@
   display: grid;
   grid-template-columns: 1fr;
   z-index: 10;
+  position: relative;
+  margin-bottom: 20px;
 
   @media (min-width: $desktop) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -42,5 +44,12 @@
     .feature-item-desc {
       text-align: center;
     }
+  }
+
+  .cta {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 
 // Components
 import Paper from "../UI/Paper";
@@ -12,6 +13,14 @@ const Features = ({ features }) => {
   return (
     <Paper>
       <div className="features">
+        <div className="cta">
+          <p className="text-xs color-gray-2">
+            <Link to="/about-us" className="color-purple">
+              LEARN MORE
+            </Link>{" "}
+            about what we offer
+          </p>
+        </div>
         {features?.map((feat) => {
           const image = getImage(feat.image);
 
