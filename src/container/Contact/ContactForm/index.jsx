@@ -154,7 +154,7 @@ const ContactForm = ({ data }) => {
               })}
             </div>
             <FormProvider {...form}>
-              {false ? (
+              {submitted ? (
                 <p>Thanks for sending your feedback.</p>
               ) : (
                 <form
@@ -204,7 +204,7 @@ const ContactForm = ({ data }) => {
                     <div className="form-row">
                       <div className="form-row-unit">
                         <ReCAPTCHA
-                          sitekey="6Ld6DMcZAAAAAP77cLAhXdE5AAyyATWU6qjdPXHZ"
+                          sitekey="6LfJ0_4dAAAAAJtEIrJhEl82_ntT-zeOlvMlTBgZ"
                           onChange={captchaChangeHandler}
                         />
                       </div>
