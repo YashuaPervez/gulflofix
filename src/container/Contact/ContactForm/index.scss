@@ -11,6 +11,19 @@
   }
 
   .contact-form-form {
+    .form-errors {
+      display: flex;
+      flex-direction: column;
+
+      .error {
+        margin-bottom: 16px;
+        color: #fff;
+        font-size: 12px;
+        padding: 10px;
+        background-color: red;
+      }
+    }
+
     .form-layout {
       display: flex;
       flex-direction: column;

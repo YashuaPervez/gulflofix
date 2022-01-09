@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import ReCAPTCHA from "react-google-recaptcha";
 
 // Components
 import Container from "../../../components/UI/Container";
@@ -20,6 +21,11 @@ const contactFormSchema = yup.object().shape({
 });
 
 const ContactForm = ({ data }) => {
+  const [submitted, setSubmitted] = useState(false);
+  const [captchaValue, setCaptchaValue] = useState(false);
+  const [submitErrors, setSubmitErrors] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   const form = useForm({
     resolver: yupResolver(contactFormSchema),
   });
@@ -29,10 +35,15 @@ const ContactForm = ({ data }) => {
   } = form;
 
   const submitFormHandler = async (data) => {
+    if (!captchaValue) {
+      return alert("Please pass the captcha");
+    }
+    setLoading(true);
+
     // Create the new request
     var xhr = new XMLHttpRequest();
     var url =
-      "https://api.hsforms.com/submissions/v3/integration/submit/21170364/d4fdc4bd-e14d-471c-8057-cd9033781ef8";
+      "https://api.hsforms.com/submissions/v3/integration/submit/8384385/bec1a432-fe82-4f98-825b-3b6e465cab19";
 
     // Example request JSON:
     var data = {
@@ -46,7 +57,7 @@ const ContactForm = ({ data }) => {
           value: data.phone,
         },
         {
-          name: "body",
+          name: "message",
           value: data.body,
         },
         {
@@ -55,8 +66,8 @@ const ContactForm = ({ data }) => {
         },
       ],
       context: {
-        pageUri: "www.example.com/page",
-        pageName: "Example page",
+        pageUri: "https://www.gulflogix.ae/",
+        pageName: "Gulflogix",
       },
       legalConsentOptions: {
         // Include this object when GDPR options are enabled
@@ -81,20 +92,25 @@ const ContactForm = ({ data }) => {
     xhr.setRequestHeader("Content-Type", "application/json");
 
     xhr.onreadystatechange = function () {
+      setLoading(false);
       if (xhr.readyState == 4 && xhr.status == 200) {
-        alert(xhr.responseText); // Returns a 200 response if the submission is successful.
+        setSubmitted(true);
       } else if (xhr.readyState == 4 && xhr.status == 400) {
-        alert(xhr.responseText); // Returns a 400 error the submission is rejected.
-      } else if (xhr.readyState == 4 && xhr.status == 403) {
-        alert(xhr.responseText); // Returns a 403 error if the portal isn't allowed to post submissions.
-      } else if (xhr.readyState == 4 && xhr.status == 404) {
-        alert(xhr.responseText); //Returns a 404 error if the formGuid isn't found
+        const response = JSON.parse(xhr.responseText);
+        setSubmitErrors(response.errors);
+        // alert(xhr.responseText);  Returns a 400 error the submission is rejected.
       }
     };
 
     // Sends the request
 
     xhr.send(final_data);
+  };
+
+  const captchaChangeHandler = (value) => {
+    if (value) {
+      setCaptchaValue(value);
+    }
   };
 
   return (
@@ -128,53 +144,80 @@ const ContactForm = ({ data }) => {
             </div>
           </div>
           <div className="contact-form-form">
+            <div className="form-errors">
+              {submitErrors.map((error) => {
+                if (error.errorType === "NUMBER_OUT_OF_RANGE") {
+                  return (
+                    <p className="error">Contact number is out of range</p>
+                  );
+                }
+              })}
+            </div>
             <FormProvider {...form}>
-              <form onSubmit={handleSubmit(submitFormHandler)}>
-                <div className="form-layout">
-                  <div className="form-row">
-                    <div className="form-row-unit">
-                      <Input
-                        id="firstname"
-                        name="firstname"
-                        placeholder="Your Name"
-                        error={errors?.firstname?.message}
-                      />
+              {false ? (
+                <p>Thanks for sending your feedback.</p>
+              ) : (
+                <form
+                  onSubmit={handleSubmit(submitFormHandler)}
+                  autoComplete="off"
+                >
+                  <div className="form-layout">
+                    <div className="form-row">
+                      <div className="form-row-unit">
+                        <Input
+                          id="firstname"
+                          name="firstname"
+                          placeholder="Your Name"
+                          error={errors?.firstname?.message}
+                        />
+                      </div>
+                      <div className="form-row-unit">
+                        <Input
+                          id="email"
+                          name="email"
+                          placeholder="Your Email"
+                          error={errors?.email?.message}
+                        />
+                      </div>
                     </div>
-                    <div className="form-row-unit">
-                      <Input
-                        id="email"
-                        name="email"
-                        placeholder="Your Email"
-                        error={errors?.email?.message}
-                      />
+                    <div className="form-row">
+                      <div className="form-row-unit">
+                        <Input
+                          id="phone"
+                          name="phone"
+                          placeholder="Contact Number"
+                          error={errors?.phone?.message}
+                        />
+                      </div>
+                    </div>
+                    <div className="form-row">
+                      <div className="form-row-unit">
+                        <Input
+                          id="body"
+                          name="body"
+                          placeholder="Your Message"
+                          text
+                          error={errors?.body?.message}
+                        />
+                      </div>
+                    </div>
+                    <div className="form-row">
+                      <div className="form-row-unit">
+                        <ReCAPTCHA
+                          sitekey="6Ld6DMcZAAAAAP77cLAhXdE5AAyyATWU6qjdPXHZ"
+                          onChange={captchaChangeHandler}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="form-row">
+                      <Button disabled={loading}>
+                        {loading ? "Submitting..." : "Send Message"}
+                      </Button>
                     </div>
                   </div>
-                  <div className="form-row">
-                    <div className="form-row-unit">
-                      <Input
-                        id="phone"
-                        name="phone"
-                        placeholder="Contact Number"
-                        error={errors?.phone?.message}
-                      />
-                    </div>
-                  </div>
-                  <div className="form-row">
-                    <div className="form-row-unit">
-                      <Input
-                        id="body"
-                        name="body"
-                        placeholder="Your Message"
-                        text
-                        error={errors?.body?.message}
-                      />
-                    </div>
-                  </div>
-                  <div className="form-row">
-                    <Button>Send Message</Button>
-                  </div>
-                </div>
-              </form>
+                </form>
+              )}
             </FormProvider>
           </div>
         </div>

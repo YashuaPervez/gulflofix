@@ -23,6 +23,7 @@ const Input = ({ name, id, placeholder, text, error, className }) => {
           id={id}
           placeholder={placeholder}
           className={`${className || "form-input"}`}
+          autoComplete="off"
           {...register(id)}
         />
       )}
