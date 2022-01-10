@@ -31,6 +31,17 @@
       }
       .top-bar-link-item-icon {
         transform: rotate(-90deg);
+        fill: #fff;
+      }
+
+      &:hover,
+      &.active {
+        .top-bar-link-item-text {
+          color: rgba(255, 255, 255, 0.5);
+        }
+        .top-bar-link-item-icon {
+          fill: rgba(255, 255, 255, 0.5);
+        }
       }
     }
   }

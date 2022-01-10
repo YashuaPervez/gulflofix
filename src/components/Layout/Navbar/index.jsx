@@ -24,18 +24,26 @@ const Navbar = () => {
         <Container>
           <ul>
             <li className="text-sm">
-              <Link to="/faq" className="top-bar-link-item">
+              <Link
+                to="/faq"
+                className="top-bar-link-item"
+                activeClassName="active"
+              >
                 <span className="top-bar-link-item-text">FAQs</span>
                 <div className="top-bar-link-item-icon">
-                  <DownArrow color="#fff" size={9} />
+                  <DownArrow color={undefined} size={9} />
                 </div>
               </Link>
             </li>
             <li className="text-sm">
-              <Link to="/contact-us" className="top-bar-link-item">
+              <Link
+                to="/contact-us"
+                className="top-bar-link-item"
+                activeClassName="active"
+              >
                 <span className="top-bar-link-item-text">Contact Us</span>
                 <div className="top-bar-link-item-icon">
-                  <DownArrow color="#fff" size={9} />
+                  <DownArrow color={undefined} size={9} />
                 </div>
               </Link>
             </li>
