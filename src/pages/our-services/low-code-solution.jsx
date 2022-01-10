@@ -36,7 +36,12 @@ const LowCodeSolution = ({ data }) => {
         buttonColor="pink"
         buttonText=""
       />
-      <ImageContent image={content.image} buttonColor="pink">
+      <ImageContent
+        image={content.image}
+        buttonColor="pink"
+        buttonLink={content.buttonLink}
+        buttonText={content.buttonText}
+      >
         <RichTextRenderer
           richText={content.body}
           config={{ p: "text-sm color-gray-2 mb-sm" }}

@@ -48,7 +48,7 @@ const ImplementationServices = ({ data }) => {
           }}
         />
       </ImageContent>
-      <OtherServices />
+      <OtherServices ignore="share" ignore2="office" />
       <section className="section bg-image">
         <div className="image">
           <StaticImage
@@ -62,7 +62,7 @@ const ImplementationServices = ({ data }) => {
             <Cards
               heading={servicesTitle}
               cards={servicesList}
-              colors={["pink", "blue", "pink"]}
+              colors={["pink", "blue", "purple"]}
             />
           </Container>
         </div>

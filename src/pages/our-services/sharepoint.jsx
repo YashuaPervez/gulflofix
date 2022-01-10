@@ -37,7 +37,7 @@ const SharePoint = ({ data }) => {
       />
       <Features data={{ servicesTitle, services }} />
       <About data={{ content }} />
-      <OtherServices />
+      <OtherServices ignore="share" />
       <section className="section">
         <CTA
           headingText="Have questions?"

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 
 // Components
 import Container from "../UI/Container";
@@ -11,7 +12,7 @@ import PowerImage from "../../images/home-services-2/power.png";
 import ShareImage from "../../images/home-services-2/share.svg";
 import "./index.scss";
 
-const OtherServices = ({ ignore = "power" }) => {
+const OtherServices = ({ ignore = "power", ignore2 = "" }) => {
   return (
     <section className="section other-services-container">
       <Container>
@@ -36,14 +37,17 @@ const OtherServices = ({ ignore = "power" }) => {
                       <h3 className="heading-small color-yellow">
                         Power Platform
                       </h3>
-                      <a className="underline yellow text-sm" href="#">
+                      <Link
+                        className="underline yellow text-sm"
+                        to="/our-services/power-platform"
+                      >
                         Learn More
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </Paper>
               )}
-              {ignore !== "office" && (
+              {ignore !== "office" && ignore2 !== "office" && (
                 <Paper>
                   <div className="other-services-content-others-item">
                     <div className="other-services-content-others-image">
@@ -53,9 +57,12 @@ const OtherServices = ({ ignore = "power" }) => {
                       <h3 className="heading-small color-orange">
                         Office 365 Services
                       </h3>
-                      <a className="underline orange text-sm" href="#">
+                      <Link
+                        className="underline orange text-sm"
+                        to="/our-services/office-365-services"
+                      >
                         Learn More
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </Paper>
@@ -68,9 +75,12 @@ const OtherServices = ({ ignore = "power" }) => {
                     </div>
                     <div className="other-services-content-others-content">
                       <h3 className="heading-small color-teal">SharePoint</h3>
-                      <a className="underline teal text-sm" href="#">
+                      <Link
+                        className="underline teal text-sm"
+                        to="/our-services/sharepoint"
+                      >
                         Learn More
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </Paper>

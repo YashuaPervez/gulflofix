@@ -90,7 +90,7 @@ const EnablementTrainingServices = ({ data }) => {
             <Cards
               heading={servicesTitle}
               cards={servicesList}
-              colors={["pink", "purple", "pink"]}
+              colors={["pink", "purple", "blue"]}
             />
           </Container>
         </div>
