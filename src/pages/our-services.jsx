@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Helmet } from "react-helmet";
 
 // Components
 import Layout from "../components/Layout";
@@ -19,6 +20,11 @@ const OurServices = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>
+          Gulf Logix Information Technology | Gulf Logix UAE | Services
+        </title>
+      </Helmet>
       <Hero data={{ title, description }} />
       <Services
         data={{

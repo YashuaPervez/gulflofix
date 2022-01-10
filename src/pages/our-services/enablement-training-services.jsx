@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import { Helmet } from "react-helmet";
 
 // Components
 import Layout from "../../components/Layout";
@@ -12,8 +13,6 @@ import Cards from "../../components/Cards";
 import RichTextRenderer from "../../components/RichTextRenderer";
 
 //
-// import image1 from "../../images/enablement-training-blob01-bg.png";
-// import image2 from "../../images/enablement-training-blob02-bg.png";
 import HeroLogo from "../../images/services/enablement-training-services/logo.png";
 
 const EnablementTrainingServices = ({ data }) => {
@@ -28,6 +27,9 @@ const EnablementTrainingServices = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Enablement {"&"} Training Services - Gulf Logix</title>
+      </Helmet>
       <CommonHero
         BgImage={() => (
           <StaticImage

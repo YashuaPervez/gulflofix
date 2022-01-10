@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Helmet } from "react-helmet";
 
 // Components
 import Layout from "../components/Layout";
@@ -13,6 +14,11 @@ const ContactUs = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>
+          Low Code Platforms | Gulf Logix Information Technology | Contact
+        </title>
+      </Helmet>
       <ContactForm
         data={{
           title,

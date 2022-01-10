@@ -1,6 +1,7 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
+import { Helmet } from "react-helmet";
 
 // Components
 import Layout from "../../components/Layout";
@@ -21,6 +22,11 @@ const ImplementationServices = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>
+          Gulf Logix Information Technology | UAE | Implementation Services
+        </title>
+      </Helmet>
       <CommonHero
         BgImage={() => (
           <StaticImage

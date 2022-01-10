@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Helmet } from "react-helmet";
 
 // Components
 import Layout from "../components/Layout";
@@ -11,6 +12,9 @@ const PrivacyPage = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Privacy Policy - Gulf Logix</title>
+      </Helmet>
       <Container>
         <section className="section">
           <h1 className="heading-big mb-lg">{title}</h1>

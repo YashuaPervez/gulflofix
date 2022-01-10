@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Helmet } from "react-helmet";
 
 // Components
 import Layout from "../components/Layout";
@@ -11,6 +12,9 @@ const TermsPage = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Terms {"&"} Conditions - Gulf Logix</title>
+      </Helmet>
       <Container>
         <section className="section">
           <RichTextRenderer

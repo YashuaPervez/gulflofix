@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Helmet } from "react-helmet";
 
 // Components
 import Layout from "../components/Layout";
@@ -12,6 +13,11 @@ const Faq = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>
+          FAQ - | Gulf Logix Information Technology Dubai | Gulf Logix
+        </title>
+      </Helmet>
       <AllFaq data={{ title, faqsList }} />
       <ContactCTA data={{ contactCta }} />
     </Layout>

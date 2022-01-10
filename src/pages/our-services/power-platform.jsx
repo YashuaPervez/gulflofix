@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import { Helmet } from "react-helmet";
 
 // Components
 import Layout from "../../components/Layout";
@@ -21,6 +22,11 @@ const PowerPlatform = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>
+          Power Apps Consulting | UAE | Power Platform | Digital Transformation
+        </title>
+      </Helmet>
       <CommonHero
         BgImage={() => (
           <StaticImage

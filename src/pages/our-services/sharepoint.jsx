@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import { Helmet } from "react-helmet";
 
 // Components
 import Layout from "../../components/Layout";
@@ -19,6 +20,9 @@ const SharePoint = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Sharepoint - Gulf Logix</title>
+      </Helmet>
       <CommonHero
         BgImage={() => (
           <StaticImage

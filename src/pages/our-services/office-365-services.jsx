@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import { Helmet } from "react-helmet";
 
 // Components
 import Layout from "../../components/Layout";
@@ -21,6 +22,9 @@ const Office365Services = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Office 365 Services - Gulf Logix</title>
+      </Helmet>
       <CommonHero
         BgImage={() => (
           <StaticImage

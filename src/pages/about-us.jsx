@@ -11,6 +11,7 @@ import Features from "../container/About/Features";
 import Services from "../container/About/Services";
 import OurSolution from "../container/About/OurSolution";
 import ShopCTA from "../container/About/ShopCTA";
+import { Helmet } from "react-helmet";
 
 const AboutUs = ({ data }) => {
   const {
@@ -29,6 +30,11 @@ const AboutUs = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>
+          Low Code Apps Dubai | Gulf Logix Information Technology | About
+        </title>
+      </Helmet>
       <Hero data={{ title, description }} />
       <Parther data={{ partner }} />
       <WhyChooseUs data={{ whyChoose }} />
