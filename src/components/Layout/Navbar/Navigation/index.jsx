@@ -63,11 +63,6 @@ const Navigation = ({ setSearchOpen }) => {
       ],
     },
     {
-      text: "Shop",
-      link: "https://www.gulflogix.ae/online-store/",
-      type: "link",
-    },
-    {
       text: "Book a Session",
       link: "https://meetings.hubspot.com/aadilg",
       type: "button",
@@ -88,12 +83,6 @@ const Navigation = ({ setSearchOpen }) => {
         console.log("onclick");
         setSearchOpen(true);
       },
-    },
-    {
-      text: <Bag size={16} />,
-      link: "https://www.gulflogix.ae/cart",
-      type: "link",
-      classes: "hide-desktop",
     },
     {
       text: "Contact Us",

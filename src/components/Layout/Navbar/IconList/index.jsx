@@ -12,11 +12,6 @@ const IconList = ({ setSearchOpen }) => {
           <Search size={16} />
         </span>
       </li>
-      <li>
-        <a href="https://www.gulflogix.ae/cart/">
-          <Bag size={18} />
-        </a>
-      </li>
     </ul>
   );
 };
