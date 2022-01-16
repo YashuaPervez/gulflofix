@@ -6,7 +6,6 @@ import RichTextRenderer from "../../../components/RichTextRenderer";
 
 //
 import "./index.scss";
-// import WhoChooseUsImage from "../../../images/about-why-choose-us.png";
 
 const WhyChooseUs = ({ data }) => {
   const image = getImage(data?.whyChoose?.image);
