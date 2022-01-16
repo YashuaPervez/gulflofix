@@ -40,6 +40,8 @@ const PowerPlatform = ({ data }) => {
         titleClasses="color-yellow"
         title2={heroCta.level2Title}
         buttonColor="yellow"
+        buttonText={heroCta.buttonText}
+        buttonLink={heroCta.buttonLink}
       />
       <Apps data={{ servicesTitle, services }} />
       <div className="office-description-container">

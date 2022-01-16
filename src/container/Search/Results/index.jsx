@@ -9,14 +9,14 @@ import "./index.scss";
 
 const Results = ({ results, query }) => {
   const filteredResults = results.filter(({ node: { searchText } }) =>
-    searchText.searchText.toLowerCase().includes(query.toLowerCase())
+    searchText?.searchText?.toLowerCase()?.includes(query?.toLowerCase())
   );
 
   return (
     <section className="section search-results">
       <Container>
-        {filteredResults.length !== 0 ? (
-          filteredResults.map(({ node: { title, link, searchText } }) => {
+        {filteredResults?.length !== 0 ? (
+          filteredResults?.map(({ node: { title, link, searchText } }) => {
             return (
               <div className="mb-lg">
                 <Link to={link}>
