@@ -30,6 +30,7 @@ export const query = graphql`
   query SearchPageQuery {
     searchPages: allContentfulSearchPage(
       filter: { node_locale: { eq: "en-US" } }
+      sort: { order: DESC, fields: contentful_id }
     ) {
       edges {
         node {
