@@ -22,7 +22,11 @@ const Search = ({ searchOpen, setSearchOpen }) => {
       <div className="search-modal-controls">
         <button onClick={() => setSearchOpen(false)}>X</button>
       </div>
-      <form className="search-modal-content" onSubmit={searchHandler}>
+      <form
+        className="search-modal-content"
+        onSubmit={searchHandler}
+        autoComplete="off"
+      >
         <div className="search-modal-input">
           <input
             placeholder="Search..."
