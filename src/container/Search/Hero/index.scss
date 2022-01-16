@@ -1,0 +1,15 @@
+.search-hero-container {
+  background-color: #eaeaea;
+  .search-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 220px;
+  }
+
+  .heading {
+    font-size: 35px;
+    font-weight: 800;
+  }
+}

@@ -1,22 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import { navigate } from "gatsby";
 
 //
 import { Search as SearchIcon } from "../icons";
 import "./index.scss";
 
 const Search = ({ searchOpen, setSearchOpen }) => {
+  const [query, setQuery] = useState();
+
+  const searchHandler = (e) => {
+    e.preventDefault();
+
+    if (query) {
+      navigate(`/search?q=${query}`);
+      setSearchOpen(false);
+    }
+  };
+
   return (
     <div className={`search-modal ${searchOpen ? "" : "hidden"}`}>
       <div className="search-modal-controls">
         <button onClick={() => setSearchOpen(false)}>X</button>
       </div>
-      <form
-        className="search-modal-content"
-        action="https://www.gulflogix.ae"
-        method="GET"
-      >
+      <form className="search-modal-content" onSubmit={searchHandler}>
         <div className="search-modal-input">
-          <input placeholder="Search..." name="s" id="search" />
+          <input
+            placeholder="Search..."
+            name="search"
+            id="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
           <button>
             <SearchIcon color="#fff" size={32} />
           </button>
