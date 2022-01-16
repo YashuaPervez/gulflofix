@@ -50,12 +50,14 @@ const Cards = ({ heading, cards, paperProps, colors }) => {
                 >
                   {card.title}
                 </h3>
-                <RichTextRenderer
-                  richText={card.description}
-                  config={{
-                    p: "text-sm mb-sm color-gray-2 card-text",
-                  }}
-                />
+                <div className="card-text-wrapper">
+                  <RichTextRenderer
+                    richText={card.description}
+                    config={{
+                      p: "text-sm mb-sm color-gray-2 card-text",
+                    }}
+                  />
+                </div>
                 <Link to={card.buttonLink}>
                   <Button color={color}>{card.buttonText}</Button>
                 </Link>
