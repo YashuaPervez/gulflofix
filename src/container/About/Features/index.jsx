@@ -11,7 +11,10 @@ const Features = ({ data }) => {
   return (
     <div className="about-features">
       <Container>
-        <FeaturesBlock features={data?.featuresList} />
+        <FeaturesBlock
+          features={data?.featuresList}
+          learnMoreLink="/our-services"
+        />
       </Container>
     </div>
   );

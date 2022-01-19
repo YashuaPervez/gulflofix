@@ -58,7 +58,10 @@ const Cards = ({ heading, cards, paperProps, colors }) => {
                     }}
                   />
                 </div>
-                <Link to={card.buttonLink}>
+                <Link
+                  to={card.buttonLink}
+                  target={card.openInNewTab ? "_blank" : undefined}
+                >
                   <Button color={color}>{card.buttonText}</Button>
                 </Link>
               </div>

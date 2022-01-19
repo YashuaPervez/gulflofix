@@ -153,6 +153,7 @@ export const query = graphql`
         }
         buttonText
         buttonLink
+        openInNewTab
       }
     }
   }

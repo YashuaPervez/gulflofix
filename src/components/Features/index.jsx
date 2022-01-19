@@ -9,13 +9,13 @@ import RichTextRenderer from "../RichTextRenderer";
 //
 import "./index.scss";
 
-const Features = ({ features }) => {
+const Features = ({ features, learnMoreLink = "/about-us" }) => {
   return (
     <Paper>
       <div className="features">
         <div className="cta">
           <p className="text-xs color-gray-2">
-            <Link to="/about-us" className="color-purple">
+            <Link to={learnMoreLink} className="color-purple">
               LEARN MORE
             </Link>{" "}
             about what we offer
